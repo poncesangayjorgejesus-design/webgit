@@ -56,27 +56,24 @@ header {
 }
 
 .logo {
-  font-family: 'Bebas Neue', 'Impact', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #d90429; /* Rojo sangre encendido */
-  letter-spacing: 4px;
+  font-family: 'Creepster', cursive, sans-serif;
+  font-size: 3rem;
+  font-weight: normal;
+  color: #e63946; /* Rojo infección */
+  letter-spacing: 5px;
   text-transform: uppercase;
-  /* Efecto de sombra y resplandor rojo sangriento */
   text-shadow: 
-    0 0 10px rgba(217, 4, 4, 0.8),
-    2px 2px 0px #000,
-    -1px -1px 0px #000;
-  transition: transform 0.2s ease;
+    0 0 15px rgba(230, 57, 70, 0.9),
+    3px 3px 0px #000;
+  transition: transform 0.3s ease;
 }
 
-/* El número 4 en el logo */
 .logo span {
   color: var(--green-glow);
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   text-shadow: 
-    0 0 12px var(--green-glow),
-    2px 2px 0px #000;
+    0 0 15px var(--green-glow),
+    3px 3px 0px #000;
 }
 
 nav ul {
@@ -86,11 +83,12 @@ nav ul {
 }
 
 nav a {
-  font-family: 'Bebas Neue', 'Impact', sans-serif;
+  font-family: 'Special Elite', cursive, monospace;
   color: var(--text-light);
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   letter-spacing: 2px;
+  font-weight: bold;
   text-transform: uppercase;
   transition: all 0.3s ease;
   padding: 4px 10px;
@@ -99,28 +97,30 @@ nav a {
 nav a:hover {
   color: var(--green-glow);
   text-shadow: 0 0 10px var(--green-glow);
-  transform: scale(1.1);
 }
 
-/* Banner principal */
-.dashboard-hero {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(11, 12, 16, 0.6) 0%,
-      rgba(11, 12, 16, 1) 100%
-    ),
-    url('https://images.alphacoders.com/839/thumb-1920-83917.jpg')
-    center/cover;
-  padding: 4rem 2rem 2rem;
-  text-align: center;
+/* 3. TÍTULOS DE SECCIÓN (EDICIONES DE LA SAGA, SUPERVIVIENTES, ETC.) */
+.section-title, 
+.dashboard-hero h1 {
+  font-family: 'Permanent Marker', 'Creepster', cursive;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
 .dashboard-hero h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: var(--red-danger);
-  text-shadow: 0 0 10px rgba(230, 57, 70, 0.8);
-  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(230, 57, 70, 0.8), 3px 3px 0px #000;
+}
+
+/* 4. TEXTOS SECUNDARIOS Y PÁRRAFOS (ESTILO DOCUMENTO DE REFUGIO) */
+.dashboard-hero p, 
+.container p, 
+.card-info span,
+.metric-card p {
+  font-family: 'Special Elite', monospace;
+  letter-spacing: 1px;
 }
 
 /* Métricas */
