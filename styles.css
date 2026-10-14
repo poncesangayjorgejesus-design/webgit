@@ -41,3 +41,17 @@ header {
 nav ul { display: flex; list-style: none; gap: 20px; }
 nav a { color: var(--text-light); text-decoration: none; font-weight: bold; transition: 0.3s; }
 nav a:hover { color: var(--green-glow); }
+
+.dashboard-hero {
+  background: linear-gradient(180deg, rgba(11,12,16,0.6) 0%, rgba(11,12,16,1) 100%),
+              url('https://images.alphacoders.com/839/thumb-1920-83917.jpg') center/cover;
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+
+.dashboard-hero h1 {
+  font-size: 3rem;
+  color: var(--red-danger);
+  text-shadow: 0 0 10px rgba(230, 57, 70, 0.8);
+  margin-bottom: 10px;
+}
