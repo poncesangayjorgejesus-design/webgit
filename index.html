@@ -20,27 +20,25 @@
 
   <section id="juegos" class="container" style="text-align: center; margin: 2rem auto;">
     <h2 class="section-title" style="display: inline-block; border-left: 5px solid #45a29e; padding-left: 15px; margin-bottom: 2rem; color: #edf5e1;">EDICIONES DE LA SAGA</h2>
-    <p style="margin-bottom: 20px; color: #c5c6c7;">Haz clic en la portada de cualquier entrega para ver su tráiler oficial.</p>
+    <p style="margin-bottom: 20px; color: #c5c6c7;">Haz clic en la portada de cualquier entrega para reproducir su tráiler ahí mismo.</p>
     <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
 
-      <!-- Portada Left 4 Dead 1 (Con tu enlace 4wZvylgUCLk) -->
-      <div onclick="openVideoModal('https://www.youtube.com/embed/4wZvylgUCLk?autoplay=1', 'Left 4 Dead 1 - Tráiler Oficial')" 
-           style="background: #1f2833; padding: 15px; border-radius: 10px; max-width: 280px; border: 1px solid #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s;"
-           onmouseover="this.style.transform='scale(1.05)'" 
-           onmouseout="this.style.transform='scale(1)'">
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Left4Dead_Windows_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" alt="Left 4 Dead 1 Cover" style="width: 100%; height: 350px; object-fit: cover; border-radius: 6px;">
+      <!-- Tarjeta Left 4 Dead 1 -->
+      <div id="card-l4d1" style="background: #1f2833; padding: 15px; border-radius: 10px; max-width: 280px; width: 100%; border: 1px solid #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+        <div id="media-container-1" style="cursor: pointer;" onclick="playVideo('1', '4wZvylgUCLk')">
+          <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Left4Dead_Windows_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" alt="Left 4 Dead 1 Cover" style="width: 100%; height: 350px; object-fit: cover; border-radius: 6px;">
+          <span style="display: block; margin-top: 8px; font-size: 0.85rem; color: #e63946; font-weight: bold;">▶ Reproducir Tráiler</span>
+        </div>
         <h3 style="color: #66fcf1; margin-top: 15px; font-size: 1.2rem;">Left 4 Dead (2008)</h3>
-        <span style="display: inline-block; margin-top: 8px; font-size: 0.85rem; color: #e63946; font-weight: bold;">▶ Ver Tráiler</span>
       </div>
 
-      <!-- Portada Left 4 Dead 2 (Con tu enlace LhxlZBIMs8s) -->
-      <div onclick="openVideoModal('https://www.youtube.com/embed/LhxlZBIMs8s?autoplay=1', 'Left 4 Dead 2 - Tráiler Oficial')" 
-           style="background: #1f2833; padding: 15px; border-radius: 10px; max-width: 280px; border: 1px solid #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s;"
-           onmouseover="this.style.transform='scale(1.05)'" 
-           onmouseout="this.style.transform='scale(1)'">
-        <img src="https://preview.redd.it/what-introduced-you-to-left-4-dead-2-made-you-start-playing-v0-jyygj7dhmm1c1.jpg?auto=webp&s=417046f53707803b0f14ef024afd5069320a2201" alt="Left 4 Dead 2 Cover" style="width: 100%; height: 350px; object-fit: cover; border-radius: 6px;">
+      <!-- Tarjeta Left 4 Dead 2 -->
+      <div id="card-l4d2" style="background: #1f2833; padding: 15px; border-radius: 10px; max-width: 280px; width: 100%; border: 1px solid #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+        <div id="media-container-2" style="cursor: pointer;" onclick="playVideo('2', 'LhxlZBIMs8s')">
+          <img src="https://preview.redd.it/what-introduced-you-to-left-4-dead-2-made-you-start-playing-v0-jyygj7dhmm1c1.jpg?auto=webp&s=417046f53707803b0f14ef024afd5069320a2201" alt="Left 4 Dead 2 Cover" style="width: 100%; height: 350px; object-fit: cover; border-radius: 6px;">
+          <span style="display: block; margin-top: 8px; font-size: 0.85rem; color: #e63946; font-weight: bold;">▶ Reproducir Tráiler</span>
+        </div>
         <h3 style="color: #66fcf1; margin-top: 15px; font-size: 1.2rem;">Left 4 Dead 2 (2009)</h3>
-        <span style="display: inline-block; margin-top: 8px; font-size: 0.85rem; color: #e63946; font-weight: bold;">▶ Ver Tráiler</span>
       </div>
 
     </div>
@@ -63,4 +61,47 @@
 
   <section id="infected" class="container">
     <h2 class="section-title" style="border-color: #e63946;">INFECTADOS ESPECIALES (8)</h2>
-    <p
+    <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en un infectado para analizar sus habilidades y nivel de amenaza.</p>
+
+    <div class="cards-grid" id="infected-grid">
+      
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content" id="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div class="modal-header">
+        <img id="modal-img" src="" alt="">
+        <div>
+          <h2 id="modal-title"></h2>
+          <span id="modal-subtitle"></span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modal-desc"></p>
+        <p><strong>Rol / Habilidad:</strong> <span id="modal-role"></span></p>
+        <p><strong>Detalle Clave:</strong> <span id="modal-extra"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para cambiar la imagen por el video directamente en la tarjeta -->
+  <script>
+    function playVideo(id, videoCode) {
+      const container = document.getElementById('media-container-' + id);
+      container.innerHTML = `
+        <div style="position: relative; width: 100%; height: 350px;">
+          <iframe src="https://www.youtube.com/embed/${videoCode}?autoplay=1" 
+                  style="width: 100%; height: 100%; border: 0; border-radius: 6px;" 
+                  allow="autoplay; encrypted-media" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+      `;
+    }
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
