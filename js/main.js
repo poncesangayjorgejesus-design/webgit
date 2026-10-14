@@ -113,3 +113,19 @@ function filterSurvivors(game) {
     renderSurvivors(filtered);
   }
 }
+
+// Abrir Modal de Superviviente con su información
+function openSurvivorModal(data) {
+  const overlay = document.getElementById("modal-overlay");
+  const content = document.getElementById("modal-content");
+
+  document.getElementById("modal-img").src = data.img;
+  document.getElementById("modal-title").innerText = data.name;
+  document.getElementById("modal-subtitle").innerText = data.role;
+  document.getElementById("modal-desc").innerText = data.desc;
+  document.getElementById("modal-role").innerText = data.role;
+  document.getElementById("modal-extra").innerText = data.extra;
+
+  content.classList.remove("infected-border");
+  overlay.style.display = "flex";
+}
