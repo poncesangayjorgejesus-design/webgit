@@ -142,3 +142,12 @@ nav a:hover { color: var(--green-glow); }
 .card-info { padding: 15px; text-align: center; }
 .card-info h3 { color: var(--green-glow); margin-bottom: 5px; }
 .card-info span { font-size: 0.85rem; background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 12px; color: var(--text-muted); }
+
+.infected-card:hover {
+  border-color: var(--red-danger);
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+}
+
+.infected-card .card-info h3 {
+  color: var(--red-danger);
+}
