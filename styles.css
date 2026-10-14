@@ -8,3 +8,17 @@
   --text-light: #edf5e1;
   --text-muted: #c5c6c7;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  padding-bottom: 40px;
+}
