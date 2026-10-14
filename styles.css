@@ -1,3 +1,4 @@
+
 :root {
   --bg-dark: #0b0c10;
   --bg-card: #1f2833;
@@ -189,7 +190,7 @@ nav a:hover {
   box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
 }
 
-/* IMÁGENES: SE MUESTRA EL PERSONAJE COMPLETO */
+/* Imágenes de las tarjetas: personaje completo */
 .character-card img {
   width: 100%;
   height: 280px;
@@ -284,14 +285,16 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
+/* MODIFICADO: imagen completa dentro del círculo */
 .modal-header img {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   border: 3px solid var(--green-glow);
   flex-shrink: 0;
+  background-color: var(--bg-dark);
 }
 
 .modal-body p {
@@ -374,6 +377,11 @@ nav a:hover {
   .modal-header {
     gap: 12px;
   }
+
+  .modal-header img {
+    width: 110px;
+    height: 110px;
+  }
 }
 
 /* Pantallas muy pequeñas */
@@ -384,5 +392,10 @@ nav a:hover {
 
   .character-card img {
     height: 260px;
+  }
+
+  .modal-header img {
+    width: 90px;
+    height: 90px;
   }
 }
