@@ -38,6 +38,19 @@
         <p>Juegos Soportados</p>
       </div>
     </div>
+  </section>
+  <section id="survivors" class="container">
+    <h2 class="section-title">SUPERVIVIENTES (8)</h2>
+    <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en cualquier personaje para ver su biografía y detalles.</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterSurvivors('all')">Todos</button>
+      <button class="filter-btn" onclick="filterSurvivors('l4d1')">Left 4 Dead 1</button>
+      <button class="filter-btn" onclick="filterSurvivors('l4d2')">Left 4 Dead 2</button>
+    </div>
+
+    <div class="cards-grid" id="survivors-grid">
+    </div>
   </section>  
 </body>
 </html>
