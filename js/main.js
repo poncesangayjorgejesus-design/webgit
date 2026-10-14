@@ -27,4 +27,13 @@ const survivorsData = [
     desc: "Analista de sistemas que mantiene la moral alta del grupo pese a la tragedia. Famoso por su adicción a los frascos de píldoras.",
     extra: "Frase icónica: 'Pills here!'"
   },
+{
+    id: "francis",
+    name: "Francis",
+    game: "l4d1",
+    role: "Tanque / Asalto",
+    img: "https://images.fineartamerica.com/images/featured-images-webp/2/francis-left-4-dead-m-w.webp",
+    desc: "Motociclista rudo y tatuado. A pesar de su actitud rebelde y de 'odiar todo', protege ferozmente a su equipo.",
+    extra: "Especialista en escopetas de corto alcance."
+  },
 ]
