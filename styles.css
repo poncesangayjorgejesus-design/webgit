@@ -22,3 +22,22 @@ body {
   line-height: 1.6;
   padding-bottom: 40px;
 }
+
+header {
+  background: rgba(15, 15, 15, 0.95);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--red-danger);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.2);
+}
+
+.logo { font-size: 2rem; font-weight: 900; color: var(--red-danger); letter-spacing: 2px; }
+.logo span { color: var(--green-glow); }
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { color: var(--text-light); text-decoration: none; font-weight: bold; transition: 0.3s; }
+nav a:hover { color: var(--green-glow); }
