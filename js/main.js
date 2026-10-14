@@ -85,7 +85,7 @@ const infectedData = [
     name: "Tank",
     threat: "Extrema (5/5)",
     ability: "Fuerza Bruta Descomunal",
-    img: "https://images.fineartamerica.com/images/featured-images-webp/2/tank-left-4-dead-m-w.webp",
+    img: "https://static.wikia.nocookie.net/left4dead/images/9/93/Tankidle.png/revision/latest?cb=20250622013003",
     desc: "Una masa hipertrofiada de músculo. Puede lanzar rocas, golpear automóviles y lanzar por los aires a todo un equipo de supervivientes.",
     extra: "Puntos débiles: Fuego sostenido y concentración de disparos entre todo el equipo."
   },
@@ -94,7 +94,7 @@ const infectedData = [
     name: "Witch",
     threat: "Letal (5/5)",
     ability: "Ataque Instantáneo",
-    img: "https://images.fineartamerica.com/images/featured-images-webp/2/witch-left-4-dead-m-w.webp",
+    img: "https://static.wikia.nocookie.net/left4dead/images/5/56/Witch_2.png/revision/latest/thumbnail/width/360/height/450?cb=20171030124036&path-prefix=es",
     desc: "Permanece llorando en el suelo. Si se le alumbra con linternas, alguien se acerca demasiado o le disparan, se enfurece e incapacita de un solo golpe.",
     extra: "Estrategia: Apagar linternas y bordearla en absoluto silencio."
   },
@@ -103,7 +103,7 @@ const infectedData = [
     name: "Hunter",
     threat: "Alta (4/5)",
     ability: "Abalanzamiento Ágil",
-    img: "https://images.fineartamerica.com/images/featured-images-webp/2/hunter-left-4-dead-m-w.webp",
+    img: "https://static.wikia.nocookie.net/left4dead/images/4/4b/Hunter.png/revision/latest?cb=20110317204213&path-prefix=es",
     desc: "Infectado con capucha súper ágil. Salta grandes alturas y distancias para caer sobre un superviviente e incapacitarlo a zarpazos.",
     extra: "Emite un gruñido característico antes de saltar."
   },
@@ -112,7 +112,7 @@ const infectedData = [
     name: "Smoker",
     threat: "Media-Alta (3/5)",
     ability: "Lengua Asfixiante",
-    img: "https://images.fineartamerica.com/images/featured-images-webp/2/smoker-left-4-dead-m-w.webp",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ucjyjWJ24AnAlu8d3H7paXxSa2gl2YCeWUPpnrOmLw&s=10",
     desc: "Atrapa a los supervivientes desde los tejados o a gran distancia con su larga lengua, arrastrándolos fuera de la vista de su grupo.",
     extra: "Al morir, libera una nube de humo que dificulta la visión y hace toser a los humanos."
   },
@@ -121,7 +121,7 @@ const infectedData = [
     name: "Boomer",
     threat: "Estratégica (3/5)",
     ability: "Bilis de Horda",
-    img: "https://images.fineartamerica.com/images/featured-images-webp/2/boomer-left-4-dead-m-w.webp",
+    img: "https://static.wikia.nocookie.net/left4dead/images/3/38/Boomer_2.png/revision/latest?cb=20160425194353&path-prefix=es",
     desc: "Infectado obeso que vomita bilis sobre los jugadores. La bilis ciega temporalmente y atrae una horda masiva de infectados comunes.",
     extra: "Explota al morir, salpicando bilis a cualquiera que esté cerca."
   },
@@ -130,7 +130,7 @@ const infectedData = [
     name: "Charger",
     threat: "Alta (4/5)",
     ability: "Carga Arrolladora",
-    img: "https://images.fineartamerica.com/images/featured-images-webp/2/charger-left-4-dead-2-m-w.webp",
+    img: "https://static.wikia.nocookie.net/left4dead/images/7/78/Charger_I.png/revision/latest?cb=20180502211147&path-prefix=es",
     desc: "Posee un brazo gigante con el que embiste a gran velocidad, dispersando al grupo y estrellando repetidamente a una víctima contra el suelo.",
     extra: "Especialmente peligroso cerca de precipicios, cornisas o ventanas."
   },
@@ -139,7 +139,7 @@ const infectedData = [
     name: "Jockey",
     threat: "Molesta (3/5)",
     ability: "Control de Movimiento",
-    img: "https://images.fineartamerica.com/images/featured-images-webp/2/jockey-left-4-dead-2-m-w.webp",
+    img: "https://static.wikia.nocookie.net/left4dead/images/c/c1/Jockey.png/revision/latest/thumbnail/width/360/height/360?cb=20110318134846&path-prefix=es",
     desc: "Infectado pequeño y jorobado que salta sobre la cabeza de los jugadores para conducirlos forzadamente hacia el peligro (fuego, hordas, etc.).",
     extra: "Emite una risa maniática fácilmente reconocible."
   },
@@ -148,7 +148,7 @@ const infectedData = [
     name: "Spitter",
     threat: "Control Zonal (4/5)",
     ability: "Ácido Corrosivo",
-    img: "https://images.fineartamerica.com/images/featured-images-webp/2/spitter-left-4-dead-2-m-w.webp",
+    img: "https://static.wikia.nocookie.net/left4dead/images/f/f8/Spitter_2.png/revision/latest?cb=20171029120756&path-prefix=es",
     desc: "Escupe un charco de ácido verdoso que inflige daño masivo acumulativo a cualquiera que permanezca parado sobre él.",
     extra: "Excelente para obligar a los supervivientes a salir de sus refugios o rincones."
   }
