@@ -36,4 +36,13 @@ const survivorsData = [
     desc: "Motociclista rudo y tatuado. A pesar de su actitud rebelde y de 'odiar todo', protege ferozmente a su equipo.",
     extra: "Especialista en escopetas de corto alcance."
   },
+{
+    id: "coach",
+    name: "Coach",
+    game: "l4d2",
+    role: "Líder de Moral",
+    img: "https://static.wikia.nocookie.net/left4dead/images/e/ee/CoachL4D2%282%29.png/revision/latest?cb=20160512213946&path-prefix=es",
+    desc: "Entrenador de fútbol americano escolar en Georgia. Hombre piadoso, alegre y con un apetito voraz por la comida rápida.",
+    extra: "Mantiene al equipo unido bajo presión."
+  },
 ]
