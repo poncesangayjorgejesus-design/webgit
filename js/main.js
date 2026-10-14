@@ -129,3 +129,9 @@ function openSurvivorModal(data) {
   content.classList.remove("infected-border");
   overlay.style.display = "flex";
 }
+
+// Cerrar Modal
+function closeModal() {
+  const overlay = document.getElementById("modal-overlay");
+  if (overlay) overlay.style.display = "none";
+}
