@@ -6,14 +6,80 @@
     <title>Document</title>
 </head>
 <body>
-develop
-    <h1>Titulo NUEVO Modificado ROCHALES CHIVITO</h1>
-
-    <h1>Pagina Web</h1>
-master
-    <form action="n" method="get">
-        <input type="button" value="Enviar">
-    </form>
+    <header>
+    <div class="logo">LEFT <span>4</span> DEAD</div>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#survivors">Supervivientes</a></li>
+        <li><a href="#infected">Infectados</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="dashboard" class="dashboard-hero">
+    <h1>PANEL DE CONTROL TÁCTICO</h1>
+    <p>Monitoreo e información en tiempo real sobre la infección y supervivientes.</p>
     
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <h3 id="survivor-count">8</h3>
+        <p>Supervivientes Registrados</p>
+      </div>
+      <div class="metric-card">
+        <h3 id="infected-count">8</h3>
+        <p>Infectados Especiales</p>
+      </div>
+      <div class="metric-card">
+        <h3>100%</h3>
+        <p>Tasa de Infección</p>
+      </div>
+      <div class="metric-card">
+        <h3>L4D1 & L4D2</h3>
+        <p>Juegos Soportados</p>
+      </div>
+    </div>
+  </section>
+  <section id="survivors" class="container">
+    <h2 class="section-title">SUPERVIVIENTES (8)</h2>
+    <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en cualquier personaje para ver su biografía y detalles.</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterSurvivors('all')">Todos</button>
+      <button class="filter-btn" onclick="filterSurvivors('l4d1')">Left 4 Dead 1</button>
+      <button class="filter-btn" onclick="filterSurvivors('l4d2')">Left 4 Dead 2</button>
+    </div>
+
+    <div class="cards-grid" id="survivors-grid">
+    </div>
+  </section> 
+  <section id="infected" class="container">
+    <h2 class="section-title" style="border-color: #e63946;">INFECTADOS ESPECIALES (8)</h2>
+    <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en un infectado para analizar sus habilidades y nivel de amenaza.</p>
+
+    <div class="cards-grid" id="infected-grid">
+      <!-- Aqui cargaran las tarjetas con JS -->
+    </div>
+  </section>
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content" id="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div class="modal-header">
+        <img id="modal-img" src="" alt="">
+        <div>
+          <h2 id="modal-title"></h2>
+          <span id="modal-subtitle"></span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modal-desc"></p>
+        <p><strong>Rol / Habilidad:</strong> <span id="modal-role"></span></p>
+        <p><strong>Detalle Clave:</strong> <span id="modal-extra"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html> 
 </body>
 </html>
