@@ -73,3 +73,7 @@ const survivorsData = [
     extra: "Mantiene la logística del grupo organizada."
   }
 ];
+// Cargar Renderizado de Supervivientes al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+  renderSurvivors(survivorsData);
+});
