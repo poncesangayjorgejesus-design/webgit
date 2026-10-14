@@ -1,52 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Left 4 Dead - Dashboard Interactivo</title>
-  <!-- Enlace a la hoja de estilos dentro de la carpeta css -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Enlace a la hoja de estilos dentro de la carpeta css -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-
-  <!-- Header & Nav -->
-  <header>
+    <header>
     <div class="logo">LEFT <span>4</span> DEAD</div>
     <nav>
       <ul>
         <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#juegos">Juegos</a></li>
         <li><a href="#survivors">Supervivientes</a></li>
         <li><a href="#infected">Infectados</a></li>
       </ul>
     </nav>
   </header>
+  <section id="juegos" class="container" style="text-align: center; margin: 2rem auto;">
+    <h2 class="section-title" style="display: inline-block; border-left: 5px solid #45a29e; padding-left: 15px; margin-bottom: 2rem; color: #edf5e1;">EDICIONES DE LA SAGA</h2>
+    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
 
-  <!-- Hero & Metrics -->
-  <section id="dashboard" class="dashboard-hero">
-    <h1>PANEL DE CONTROL TÁCTICO</h1>
-    <p>Monitoreo e información en tiempo real sobre la infección y supervivientes.</p>
-    
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <h3 id="survivor-count">8</h3>
-        <p>Supervivientes Registrados</p>
+        <div style="background: #1f2833; padding: 15px; border-radius: 10px; max-width: 280px; border: 1px solid #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Left4Dead_Windows_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" alt="Left 4 Dead 1 Cover" style="width: 100%; height: 350px; object-fit: cover; border-radius: 6px;">
+        <h3 style="color: #66fcf1; margin-top: 15px; font-size: 1.2rem;">Left 4 Dead (2008)</h3>
       </div>
-      <div class="metric-card">
-        <h3 id="infected-count">8</h3>
-        <p>Infectados Especiales</p>
+      <div style="background: #1f2833; padding: 15px; border-radius: 10px; max-width: 280px; border: 1px solid #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+        <img src="https://preview.redd.it/what-introduced-you-to-left-4-dead-2-made-you-start-playing-v0-jyygj7dhmm1c1.jpg?auto=webp&s=417046f53707803b0f14ef024afd5069320a2201" alt="Left 4 Dead 2 Cover" style="width: 100%; height: 350px; object-fit: cover; border-radius: 6px;">
+        <h3 style="color: #66fcf1; margin-top: 15px; font-size: 1.2rem;">Left 4 Dead 2 (2009)</h3>
       </div>
-      <div class="metric-card">
-        <h3>100%</h3>
-        <p>Tasa de Infección</p>
-      </div>
-      <div class="metric-card">
-        <h3>L4D1 Y L4D2</h3>
-        <p>Juegos Soportados</p>
-      </div>
+
     </div>
   </section>
-
-  <!-- Sección Supervivientes -->
   <section id="survivors" class="container">
     <h2 class="section-title">SUPERVIVIENTES (8)</h2>
     <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en cualquier personaje para ver su biografía y detalles.</p>
@@ -58,21 +45,17 @@
     </div>
 
     <div class="cards-grid" id="survivors-grid">
-      <!-- Aquí cargarán las tarjetas con JS -->
+      
     </div>
-  </section> 
-
-  <!-- Sección Infectados -->
+  </section>
   <section id="infected" class="container">
     <h2 class="section-title" style="border-color: #e63946;">INFECTADOS ESPECIALES (8)</h2>
     <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en un infectado para analizar sus habilidades y nivel de amenaza.</p>
 
     <div class="cards-grid" id="infected-grid">
-      <!-- Aquí cargarán las tarjetas con JS -->
+      
     </div>
   </section>
-
-  <!-- Modal Interactivo -->
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal-content" id="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -90,8 +73,8 @@
       </div>
     </div>
   </div>
-
-  <!-- Script interactivo -->
   <script src="js/main.js"></script>
+</body>
+</html>
 </body>
 </html>
