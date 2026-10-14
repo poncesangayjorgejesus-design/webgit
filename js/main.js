@@ -63,4 +63,13 @@ const survivorsData = [
     desc: "Apostador y estafador profesional vestimentado de traje blanco. Inicialmente desconfiado, aprende a depender de los demás.",
     extra: "Prefiere pistolas duales y armas de precisión."
   },
-]
+{
+    id: "rochelle",
+    name: "Rochelle",
+    game: "l4d2",
+    role: "Comunicaciones",
+    img: "https://static.wikia.nocookie.net/left4dead/images/e/eb/Rochelle.jpg/revision/latest?cb=20110422174102&path-prefix=es",
+    desc: "Asistente de producción de un canal de noticias de televisión enviada a cubrir el brote. Muy sensata y equilibrada.",
+    extra: "Mantiene la logística del grupo organizada."
+  }
+];
