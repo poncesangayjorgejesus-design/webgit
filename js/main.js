@@ -18,4 +18,13 @@ const survivorsData = [
     desc: "Estudiante universitaria aficionada a las películas de terror, lo que le dio una ventaja práctica inesperada ante el apocalipsis.",
     extra: "Especialista en rifles de precisión a larga distancia."
   },
+{
+    id: "louis",
+    name: "Louis",
+    game: "l4d1",
+    role: "Optimista del Equipo",
+    img: "https://static.wikia.nocookie.net/left4dead/images/8/85/Bg_survivors_bottom_louis.jpg/revision/latest?cb=20151106041058&path-prefix=es",
+    desc: "Analista de sistemas que mantiene la moral alta del grupo pese a la tragedia. Famoso por su adicción a los frascos de píldoras.",
+    extra: "Frase icónica: 'Pills here!'"
+  },
 ]
