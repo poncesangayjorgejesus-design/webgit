@@ -54,4 +54,13 @@ const survivorsData = [
     desc: "Joven mecánico entusiasmadísimo con las armas y los autos. Le encanta contar historias interminables de su amigo Keith.",
     extra: "Experto en reparaciones y armas automáticas."
   },
+{
+    id: "nick",
+    name: "Nick",
+    game: "l4d2",
+    role: "Tirador Cínico",
+    img: "https://static.wikia.nocookie.net/left4dead/images/6/6f/Nick.png/revision/latest?cb=20110402165313&path-prefix=es",
+    desc: "Apostador y estafador profesional vestimentado de traje blanco. Inicialmente desconfiado, aprende a depender de los demás.",
+    extra: "Prefiere pistolas duales y armas de precisión."
+  },
 ]
