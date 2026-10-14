@@ -56,14 +56,27 @@ header {
 }
 
 .logo {
-  font-size: 2rem;
+  font-family: 'Bebas Neue', 'Impact', sans-serif;
+  font-size: 2.8rem;
   font-weight: 900;
-  color: var(--red-danger);
-  letter-spacing: 2px;
+  color: #d90429; /* Rojo sangre encendido */
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  /* Efecto de sombra y resplandor rojo sangriento */
+  text-shadow: 
+    0 0 10px rgba(217, 4, 4, 0.8),
+    2px 2px 0px #000,
+    -1px -1px 0px #000;
+  transition: transform 0.2s ease;
 }
 
+/* El número 4 en el logo */
 .logo span {
   color: var(--green-glow);
+  font-size: 3.2rem;
+  text-shadow: 
+    0 0 12px var(--green-glow),
+    2px 2px 0px #000;
 }
 
 nav ul {
@@ -73,14 +86,20 @@ nav ul {
 }
 
 nav a {
+  font-family: 'Bebas Neue', 'Impact', sans-serif;
   color: var(--text-light);
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding: 4px 10px;
 }
 
 nav a:hover {
   color: var(--green-glow);
+  text-shadow: 0 0 10px var(--green-glow);
+  transform: scale(1.1);
 }
 
 /* Banner principal */
