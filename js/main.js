@@ -32,7 +32,7 @@ const survivorsData = [
     name: "Francis",
     game: "l4d1",
     role: "Tanque / Asalto",
-    img: "https://images.fineartamerica.com/images/featured-images-webp/2/francis-left-4-dead-m-w.webp",
+    img: "https://static.wikia.nocookie.net/left4dead/images/3/3c/Francis_Profile.png/revision/latest?cb=20220918064846",
     desc: "Motociclista rudo y tatuado. A pesar de su actitud rebelde y de 'odiar todo', protege ferozmente a su equipo.",
     extra: "Especialista en escopetas de corto alcance."
   },
