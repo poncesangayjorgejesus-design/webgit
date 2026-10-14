@@ -23,6 +23,7 @@ body {
   padding-bottom: 40px;
 }
 
+/* Header y navegación */
 header {
   background: rgba(15, 15, 15, 0.95);
   padding: 1rem 2rem;
@@ -36,15 +37,44 @@ header {
   box-shadow: 0 4px 15px rgba(230, 57, 70, 0.2);
 }
 
-.logo { font-size: 2rem; font-weight: 900; color: var(--red-danger); letter-spacing: 2px; }
-.logo span { color: var(--green-glow); }
-nav ul { display: flex; list-style: none; gap: 20px; }
-nav a { color: var(--text-light); text-decoration: none; font-weight: bold; transition: 0.3s; }
-nav a:hover { color: var(--green-glow); }
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--red-danger);
+  letter-spacing: 2px;
+}
 
+.logo span {
+  color: var(--green-glow);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--green-glow);
+}
+
+/* Banner principal */
 .dashboard-hero {
-  background: linear-gradient(180deg, rgba(11,12,16,0.6) 0%, rgba(11,12,16,1) 100%),
-              url('https://images.alphacoders.com/839/thumb-1920-83917.jpg') center/cover;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11, 12, 16, 0.6) 0%,
+      rgba(11, 12, 16, 1) 100%
+    ),
+    url('https://images.alphacoders.com/839/thumb-1920-83917.jpg')
+    center/cover;
   padding: 4rem 2rem 2rem;
   text-align: center;
 }
@@ -56,6 +86,7 @@ nav a:hover { color: var(--green-glow); }
   margin-bottom: 10px;
 }
 
+/* Métricas */
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -71,14 +102,27 @@ nav a:hover { color: var(--green-glow); }
   border-radius: 10px;
   border-left: 5px solid var(--green-glow);
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s;
 }
 
-.metric-card:hover { transform: translateY(-5px); }
-.metric-card h3 { font-size: 2.5rem; color: var(--green-glow); }
-.metric-card p { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+.metric-card:hover {
+  transform: translateY(-5px);
+}
 
+.metric-card h3 {
+  font-size: 2.5rem;
+  color: var(--green-glow);
+}
+
+.metric-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Secciones generales */
 .container {
   max-width: 1200px;
   margin: 2rem auto;
@@ -93,6 +137,7 @@ nav a:hover { color: var(--green-glow); }
   margin-bottom: 1.5rem;
 }
 
+/* Filtros */
 .filter-bar {
   display: flex;
   gap: 10px;
@@ -111,17 +156,20 @@ nav a:hover { color: var(--green-glow); }
   transition: 0.3s;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active,
+.filter-btn:hover {
   background: var(--green-glow);
   color: #000;
 }
 
+/* Cuadrícula de personajes */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
 }
 
+/* Tarjetas */
 .character-card {
   background: var(--bg-card);
   border-radius: 10px;
@@ -130,6 +178,9 @@ nav a:hover { color: var(--green-glow); }
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .character-card:hover {
@@ -138,11 +189,38 @@ nav a:hover { color: var(--green-glow); }
   box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
 }
 
-.character-card img { width: 100%; height: 220px; object-fit: cover; }
-.card-info { padding: 15px; text-align: center; }
-.card-info h3 { color: var(--green-glow); margin-bottom: 5px; }
-.card-info span { font-size: 0.85rem; background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 12px; color: var(--text-muted); }
+/* IMÁGENES: SE MUESTRA EL PERSONAJE COMPLETO */
+.character-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background-color: var(--bg-card);
+  flex-shrink: 0;
+}
 
+/* Información de cada personaje */
+.card-info {
+  padding: 15px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.card-info h3 {
+  color: var(--green-glow);
+  margin-bottom: 5px;
+}
+
+.card-info span {
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 8px;
+  border-radius: 12px;
+  color: var(--text-muted);
+}
+
+/* Infectados */
 .infected-card:hover {
   border-color: var(--red-danger);
   box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
@@ -152,33 +230,159 @@ nav a:hover { color: var(--green-glow); }
   color: var(--red-danger);
 }
 
+/* Ventana modal */
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.85);
   display: none;
-  justify-content: center; align-items: center;
-  z-index: 1000; padding: 20px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
 }
 
 .modal-content {
   background: var(--bg-card);
-  max-width: 600px; width: 100%;
-  border-radius: 12px; padding: 25px; position: relative;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 25px;
+  position: relative;
   border: 2px solid var(--green-glow);
   animation: fadeIn 0.3s ease-in-out;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
-.modal-content.infected-border { border-color: var(--red-danger); }
-.close-btn { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; color: var(--text-muted); cursor: pointer; }
-.close-btn:hover { color: var(--red-danger); }
-.modal-header { display: flex; gap: 20px; align-items: center; margin-bottom: 15px; }
-.modal-header img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid var(--green-glow); }
-.modal-body p { margin-bottom: 10px; font-size: 1rem; }
-.modal-body strong { color: var(--green-glow); }
-.infected-border .modal-body strong { color: var(--red-danger); }
+.modal-content.infected-border {
+  border-color: var(--red-danger);
+}
 
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: var(--red-danger);
+}
+
+/* Cabecera del modal */
+.modal-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid var(--green-glow);
+  flex-shrink: 0;
+}
+
+.modal-body p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.modal-body strong {
+  color: var(--green-glow);
+}
+
+.infected-border .modal-body strong {
+  color: var(--red-danger);
+}
+
+/* Animación */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+  header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .dashboard-hero {
+    padding: 3rem 1rem 2rem;
+  }
+
+  .dashboard-hero h1 {
+    font-size: 2rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .character-card img {
+    height: 210px;
+  }
+
+  .card-info {
+    padding: 10px;
+  }
+
+  .card-info h3 {
+    font-size: 1rem;
+  }
+
+  .card-info span {
+    font-size: 0.75rem;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-header {
+    gap: 12px;
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-card img {
+    height: 260px;
+  }
 }
