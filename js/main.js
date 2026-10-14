@@ -45,4 +45,13 @@ const survivorsData = [
     desc: "Entrenador de fútbol americano escolar en Georgia. Hombre piadoso, alegre y con un apetito voraz por la comida rápida.",
     extra: "Mantiene al equipo unido bajo presión."
   },
+{
+    id: "ellis",
+    name: "Ellis",
+    game: "l4d2",
+    role: "Mecánico / Velocidad",
+    img: "https://static.wikia.nocookie.net/left4dead/images/1/14/EllisWeaponsRender.jpg/revision/latest?cb=20120526181152&path-prefix=es",
+    desc: "Joven mecánico entusiasmadísimo con las armas y los autos. Le encanta contar historias interminables de su amigo Keith.",
+    extra: "Experto en reparaciones y armas automáticas."
+  },
 ]
