@@ -77,3 +77,25 @@ const survivorsData = [
 document.addEventListener("DOMContentLoaded", () => {
   renderSurvivors(survivorsData);
 });
+
+// Función para renderizar las tarjetas de los 8 personajes
+function renderSurvivors(data) {
+  const container = document.getElementById("survivors-grid");
+  if (!container) return;
+  container.innerHTML = "";
+
+  data.forEach(item => {
+    const card = document.createElement("div");
+    card.className = `character-card ${item.game}`;
+    card.onclick = () => openSurvivorModal(item);
+
+    card.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
+      <div class="card-info">
+        <h3>${item.name}</h3>
+        <span>${item.role}</span>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
