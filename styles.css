@@ -92,3 +92,26 @@ nav a:hover { color: var(--green-glow); }
   padding-left: 15px;
   margin-bottom: 1.5rem;
 }
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--green-l4d);
+  color: var(--text-light);
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--green-glow);
+  color: #000;
+}
