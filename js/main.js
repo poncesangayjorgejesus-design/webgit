@@ -99,3 +99,17 @@ function renderSurvivors(data) {
     container.appendChild(card);
   });
 }
+
+// Función para filtrar entre L4D1, L4D2 o Todos
+function filterSurvivors(game) {
+  const buttons = document.querySelectorAll(".filter-btn");
+  buttons.forEach(btn => btn.classList.remove("active"));
+  if (event) event.target.classList.add("active");
+
+  if (game === "all") {
+    renderSurvivors(survivorsData);
+  } else {
+    const filtered = survivorsData.filter(s => s.game === game);
+    renderSurvivors(filtered);
+  }
+}
