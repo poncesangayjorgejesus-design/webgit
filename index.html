@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Left 4 Dead</title>
-    <!-- Enlace a la hoja de estilos dentro de la carpeta css -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Left 4 Dead — Dashboard Táctico</title>
+  <!-- Enlace a la hoja de estilos dentro de la carpeta css -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
- feature/survivors-data
-      <header>
+
+  <!-- ==========================================
+       HEADER / NAVEGACIÓN PRINCIPAL
+       ========================================== -->
+  <header class="main-header">
     <div class="logo">LEFT <span>4</span> DEAD</div>
     <nav>
       <ul>
         <li><a href="#juegos">Juegos</a></li>
-
-    <header>
-    <div class="logo">LEFT <span>4</span> DEAD</div>
-    <nav>
-      <ul>
-        <li><a href="#dashboard">Dashboard</a></li>
- master
         <li><a href="#survivors">Supervivientes</a></li>
         <li><a href="#infected">Infectados</a></li>
+        <li><a href="javascript:void(0);" id="night-vision-btn" class="nav-btn-action" onclick="toggleNightVision()">Visión Nocturna</a></li>
+        
+        <!-- Botón de Música Ambiental -->
+        <li>
+          <a href="javascript:void(0);" id="audio-toggle-btn" class="nav-btn-action" onclick="toggleSafeRoomAudio()">
+            🎵 <span id="audio-status">Música: OFF</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
- feature/survivors-data
-
+    
+  <!-- ==========================================
+       SECCIÓN 1: EDICIONES DE LA SAGA (TRÁILERES)
+       ========================================== -->
   <section id="juegos" class="container" style="text-align: center; margin: 2rem auto;">
     <h2 class="section-title" style="display: inline-block; border-left: 5px solid #45a29e; padding-left: 15px; margin-bottom: 2rem; color: #edf5e1;">EDICIONES DE LA SAGA</h2>
     <p style="margin-bottom: 20px; color: #c5c6c7;">Haz clic en la portada de cualquier entrega para reproducir su tráiler.</p>
+    
     <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
 
       <!-- Tarjeta Left 4 Dead 1 -->
@@ -54,7 +61,9 @@
     </div>
   </section>
 
-
+  <!-- ==========================================
+       SECCIÓN 2: DASHBOARD TÁCTICO
+       ========================================== -->
   <section id="dashboard" class="dashboard-hero">
     <h1>PANEL DE CONTROL TÁCTICO</h1>
     <p>Monitoreo e información en tiempo real sobre la infección y supervivientes.</p>
@@ -79,6 +88,9 @@
     </div>
   </section>
 
+  <!-- ==========================================
+       SECCIÓN 3: SUPERVIVIENTES
+       ========================================== -->
   <section id="survivors" class="container">
     <h2 class="section-title">SUPERVIVIENTES (8)</h2>
     <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en cualquier personaje para ver su biografía y detalles.</p>
@@ -89,30 +101,24 @@
       <button class="filter-btn" onclick="filterSurvivors('l4d2')">Left 4 Dead 2</button>
     </div>
 
-    <div class="cards-grid" id="survivors-grid">
- feature/survivors-data
-      
-    </div>
+    <!-- Aquí cargan las tarjetas de supervivientes mediante JS -->
+    <div class="cards-grid" id="survivors-grid"></div>
   </section>
 
-
-    </div>
-  </section> 
- master
+  <!-- ==========================================
+       SECCIÓN 4: INFECTADOS ESPECIALES
+       ========================================== -->
   <section id="infected" class="container">
     <h2 class="section-title" style="border-color: #e63946;">INFECTADOS ESPECIALES (8)</h2>
     <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en un infectado para analizar sus habilidades y nivel de amenaza.</p>
 
-    <div class="cards-grid" id="infected-grid">
-
-      
-    </div>
+    <!-- Aquí cargan las tarjetas de infectados mediante JS -->
+    <div class="cards-grid" id="infected-grid"></div>
   </section>
 
-      <!-- Aqui cargaran las tarjetas con JS -->
-    </div>
-  </section>
- 
+  <!-- ==========================================
+       MODAL DE DETALLES
+       ========================================== -->
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal-content" id="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -131,8 +137,53 @@
     </div>
   </div>
 
+  <!-- ==========================================
+       PIE DE PÁGINA (FOOTER TÁCTICO CEDA)
+       ========================================== -->
+  <footer class="ceda-footer">
+    <div class="quotes-ticker">
+      <span class="ticker-label">⚠️ ALERTA DE RADIO:</span>
+      <div class="ticker-content">
+        <span id="game-quote">"¡PILLS HERE!" — Louis</span>
+      </div>
+    </div>
 
-  <!-- Script para reproducir los videos locales directamente en la tarjeta -->
+    <div class="footer-body container">
+      <div class="ceda-badge-container">
+        <div class="ceda-stamp">
+          <span class="ceda-title">CEDA</span>
+          <span class="ceda-sub">Civil Emergency and Defense Agency</span>
+        </div>
+        <p class="ceda-warning">
+          SISTEMA DE MONITOREO DE INFECTADOS GENERALES.<br>
+          <em>Desarrollado bajo protocolo de contención CEDA — Nivel de Alerta Naranja.</em>
+        </p>
+      </div>
+
+      <div class="credits-section">
+        <h3>EQUIPO DE DESARROLLO (SUPERVIVIENTES)</h3>
+        <div class="team-links">
+          <a href="https://github.com/poncesangayjorgejesus-design" target="_blank" rel="noopener noreferrer">
+            👨‍💻 Jorge Ponce (Líder / Dev)
+          </a>
+          <a href="https://github.com/cristhianromerozavaleta-desig" target="_blank" rel="noopener noreferrer">
+            👨‍💻 Cristhian Romero (Dev)
+          </a>
+          <a href="https://github.com/estebangonzalezreyna423-jpg" target="_blank" rel="noopener noreferrer">
+            👨‍💻 Esteban Daniel (Dev)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Left 4 Dead Dashboard — Fan Project &bull; Todos los derechos reservados a Valve Corporation.</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
   <script>
     function playLocalVideo(id, videoPath) {
       const container = document.getElementById('media-container-' + id);
@@ -146,9 +197,6 @@
   </script>
 
   <script src="js/main.js"></script>
-
-</body>
-</html> 
 
 </body>
 </html>
