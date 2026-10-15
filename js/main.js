@@ -1,4 +1,3 @@
- feature/survivors-data
 // ==========================================
 // 1. BASE DE DATOS DE LOS 8 SUPERVIVIENTES
 // ==========================================
@@ -17,7 +16,7 @@ const survivorsData = [
     name: "Zoey",
     game: "l4d1",
     role: "Apoyo / Francotiradora",
-    img: "https://static.wikia.nocookie.net/left4dead/images/9/93/Bg_survivors_bottom_zoey.jpg/revision/latest?cb=20151106040944&path-prefix=es",
+    img: "https://static.wikia.nocookie.net/vsbattles/images/4/41/L4D-ZoeyRenderFullTrans.png/revision/latest?cb=20240321093926",
     desc: "Estudiante universitaria aficionada a las películas de terror, lo que le dio una ventaja práctica inesperada ante el apocalipsis.",
     extra: "Especialista en rifles de precisión a larga distancia."
   },
@@ -26,7 +25,7 @@ const survivorsData = [
     name: "Louis",
     game: "l4d1",
     role: "Optimista del Equipo",
-    img: "https://static.wikia.nocookie.net/left4dead/images/8/85/Bg_survivors_bottom_louis.jpg/revision/latest?cb=20151106041058&path-prefix=es",
+    img: "https://static.wikia.nocookie.net/ficcion-sin-limites/images/a/a4/2174760223_preview_Louis_1.png/revision/latest/scale-to-width-down/340?cb=20210708004044&path-prefix=es",
     desc: "Analista de sistemas que mantiene la moral alta del grupo pese a la tragedia. Famoso por su adicción a los frascos de píldoras.",
     extra: "Frase icónica: 'Pills here!'"
   },
@@ -35,7 +34,7 @@ const survivorsData = [
     name: "Francis",
     game: "l4d1",
     role: "Tanque / Asalto",
-    img: "https://static.wikia.nocookie.net/left4dead/images/3/3c/Francis_Profile.png/revision/latest?cb=20220918064846",
+    img: "https://static.wikia.nocookie.net/vsbattles/images/2/27/L4D-FrancisRenderFullTrans.png/revision/latest?cb=20240321093829",
     desc: "Motociclista rudo y tatuado. A pesar de su actitud rebelde y de 'odiar todo', protege ferozmente a su equipo.",
     extra: "Especialista en escopetas de corto alcance."
   },
@@ -53,7 +52,7 @@ const survivorsData = [
     name: "Ellis",
     game: "l4d2",
     role: "Mecánico / Velocidad",
-    img: "https://static.wikia.nocookie.net/left4dead/images/1/14/EllisWeaponsRender.jpg/revision/latest?cb=20120526181152&path-prefix=es",
+    img: "https://static.wikia.nocookie.net/86db746b-0d19-47ed-98e8-e059f9d1e51b",
     desc: "Joven mecánico entusiasmadísimo con las armas y los autos. Le encanta contar historias interminables de su amigo Keith.",
     extra: "Experto en reparaciones y armas automáticas."
   },
@@ -71,7 +70,7 @@ const survivorsData = [
     name: "Rochelle",
     game: "l4d2",
     role: "Comunicaciones",
-    img: "https://static.wikia.nocookie.net/left4dead/images/e/eb/Rochelle.jpg/revision/latest?cb=20110422174102&path-prefix=es",
+    img: "https://static.wikia.nocookie.net/ficcion-sin-limites/images/3/3a/Rochelle.png/revision/latest?cb=20210701005341&path-prefix=es",
     desc: "Asistente de producción de un canal de noticias de televisión enviada a cubrir el brote. Muy sensata y equilibrada.",
     extra: "Mantiene la logística del grupo organizada."
   }
@@ -80,15 +79,12 @@ const survivorsData = [
 // ==========================================
 // 2. BASE DE DATOS DE LOS 8 INFECTADOS ESPECIALES
 // ==========================================
-=======
-
 const infectedData = [
   {
     id: "tank",
     name: "Tank",
     threat: "Extrema (5/5)",
     ability: "Fuerza Bruta Descomunal",
-
     img: "https://static.wikia.nocookie.net/left4dead/images/9/93/Tankidle.png/revision/latest?cb=20250622013003",
     desc: "Una masa hipertrofiada de músculo. Puede lanzar rocas, golpear automóviles y lanzar por los aires a todo un equipo de supervivientes.",
     extra: "Puntos débiles: Fuego sostenido y concentración de disparos entre todo el equipo."
@@ -116,7 +112,7 @@ const infectedData = [
     name: "Smoker",
     threat: "Media-Alta (3/5)",
     ability: "Lengua Asfixiante",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ucjyjWJ24AnAlu8d3H7paXxSa2gl2YCeWUPpnrOmLw&s=10",
+    img: "https://static.wikia.nocookie.net/left4dead/images/0/04/Smokeridle.png/revision/latest?cb=20250531051316",
     desc: "Atrapa a los supervivientes desde los tejados o a gran distancia con su larga lengua, arrastrándolos fuera de la vista de su grupo.",
     extra: "Al morir, libera una nube de humo que dificulta la visión y hace toser a los humanos."
   },
@@ -162,7 +158,6 @@ const infectedData = [
 // 3. FUNCIONES DE RENDERIZADO
 // ==========================================
 
-// Renderizar Supervivientes
 function renderSurvivors(data) {
   const container = document.getElementById("survivors-grid");
   if (!container) return;
@@ -171,7 +166,7 @@ function renderSurvivors(data) {
   data.forEach(item => {
     const card = document.createElement("div");
     card.className = `character-card ${item.game}`;
-    card.onclick = () => openModal(item, false); // false indica que no es infectado
+    card.onclick = () => openModal(item, false);
 
     card.innerHTML = `
       <img src="${item.img}" alt="${item.name}">
@@ -184,7 +179,6 @@ function renderSurvivors(data) {
   });
 }
 
-// Renderizar Infectados Especiales
 function renderInfected() {
   const container = document.getElementById("infected-grid");
   if (!container) return;
@@ -193,7 +187,7 @@ function renderInfected() {
   infectedData.forEach(zombie => {
     const card = document.createElement("div");
     card.className = "character-card infected-card";
-    card.onclick = () => openModal(zombie, true); // true indica que sí es infectado
+    card.onclick = () => openModal(zombie, true);
 
     card.innerHTML = `
       <img src="${zombie.img}" alt="${zombie.name}">
@@ -206,11 +200,12 @@ function renderInfected() {
   });
 }
 
-// Filtrar Supervivientes por juego
 function filterSurvivors(game) {
   const buttons = document.querySelectorAll(".filter-btn");
   buttons.forEach(btn => btn.classList.remove("active"));
-  if (event) event.target.classList.add("active");
+  if (window.event && window.event.target) {
+    window.event.target.classList.add("active");
+  }
 
   if (game === "all") {
     renderSurvivors(survivorsData);
@@ -251,7 +246,6 @@ function closeModal() {
   }
 }
 
-// Cerrar el modal al hacer clic fuera del contenido
 window.onclick = function(event) {
   const overlay = document.getElementById("modal-overlay");
   if (event.target === overlay) {
@@ -260,15 +254,104 @@ window.onclick = function(event) {
 };
 
 // ==========================================
-// 5. CARGA AUTOMÁTICA AL ABRIR LA PÁGINA
+// 5. CARRUSEL DE FRASES DE LA CEDA
+// ==========================================
+const l4dQuotes = [
+  '"¡PILLS HERE!" — Louis',
+  '"¡TANK! ¡VIENE UN TANK!" — Coach',
+  '"Apaguen las linternas... hay una Witch cerca." — Bill',
+  '"¡Alguien detenga al Charger!" — Ellis',
+  '"No soy de los que abrazan, pero me alegra verlos." — Nick',
+  '"¿Alguna vez les conté sobre mi amigo Keith?" — Ellis',
+  '"¡Me atrapó el Smoker!" — Zoey',
+  '"¡Bilis de Boomer! ¡Viene la horda!" — Francis'
+];
+
+let currentQuoteIndex = 0;
+
+function rotateQuotes() {
+  const quoteElement = document.getElementById("game-quote");
+  if (!quoteElement) return;
+
+  quoteElement.style.opacity = "0";
+
+  setTimeout(() => {
+    currentQuoteIndex = (currentQuoteIndex + 1) % l4dQuotes.length;
+    quoteElement.innerText = l4dQuotes[currentQuoteIndex];
+    quoteElement.style.opacity = "1";
+  }, 500);
+}
+
+// ==========================================
+// 6. CARGA AUTOMÁTICA AL ABRIR LA PÁGINA
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
   renderSurvivors(survivorsData);
   renderInfected();
+  setInterval(rotateQuotes, 4000);
 });
 
-    img: "https://static.wikia.nocookie.net/left4dead/images/9/93/Tankidle.png/revision/latest?cb=20250622013003", // <-- Cambia tu link aquí
-    desc: "Una masa hipertrofiada de músculo. Puede lanzar rocas, golpear automóviles y lanzar por los aires a todo un equipo de supervivientes.",
-    extra: "Puntos débiles: Fuego sostenido y concentración de disparos entre todo el equipo."
-  },
+// ==========================================
+// 7. INTERRUPTOR DE MODO DE EMERGENCIA (EASTER EGG)
+// ==========================================
+let emergencyModeState = 0; // 0: Normal, 1: Visión Nocturna, 2: Alerta Roja CEDA
 
+function toggleNightVision() {
+  const body = document.body;
+  const btn = document.getElementById("night-vision-btn");
+  
+  if (!body || !btn) return;
+
+  emergencyModeState = (emergencyModeState + 1) % 3;
+
+  // Limpiamos clases anteriores
+  body.classList.remove("night-vision-mode", "ceda-alert-mode");
+
+  if (emergencyModeState === 1) {
+    body.classList.add("night-vision-mode");
+    btn.innerText = "Alerta CEDA";
+  } else if (emergencyModeState === 2) {
+    body.classList.add("ceda-alert-mode");
+    btn.innerText = "Modo Normal";
+  } else {
+    btn.innerText = "Visión Nocturna";
+  }
+}
+
+// ==========================================
+// 8. MÚSICA AMBIENTAL (SAFE ROOM)
+// ==========================================
+const safeRoomMusic = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=sweet-love-115033.mp3');
+safeRoomMusic.loop = true;
+safeRoomMusic.volume = 0.3;
+
+let isMusicPlaying = false;
+
+function toggleSafeRoomAudio() {
+  const musicBtn = document.getElementById('audio-toggle-btn');
+  const musicStatus = document.getElementById('audio-status');
+
+  if (isMusicPlaying) {
+    safeRoomMusic.pause();
+    isMusicPlaying = false;
+    
+    if (musicStatus) musicStatus.innerText = "Música: OFF";
+    if (musicBtn) {
+      musicBtn.style.borderColor = "#30363d";
+      musicBtn.style.color = "#edf5e1";
+    }
+  } else {
+    safeRoomMusic.play().then(() => {
+      isMusicPlaying = true;
+      
+      if (musicStatus) musicStatus.innerText = "Música: ON";
+      if (musicBtn) {
+        musicBtn.style.borderColor = "#2ec4b6";
+        musicBtn.style.color = "#2ec4b6";
+      }
+    }).catch(e => {
+      console.log("El navegador bloqueó la reproducción automática:", e);
+      alert("Por favor, haz un clic en la página primero para permitir el audio.");
+    });
+  }
+}

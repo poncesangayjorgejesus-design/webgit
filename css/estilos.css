@@ -3,9 +3,10 @@
   --bg-card: #1f2833;
   --green-l4d: #45a29e;
   --green-glow: #66fcf1;
+  --survivor-blue: #00bfff;
   --red-l4d: #c5a059;
   --red-danger: #e63946;
-  --text-light: #edf5e1;
+  --text-light: #ffffff;
   --text-muted: #c5c6c7;
 }
 
@@ -18,30 +19,51 @@
 
 body {
   background-color: var(--bg-dark);
-  /* CAPA OSCURA SUAVIZADA AL 45% PARA QUE LA IMAGEN SE APRECIE MÁS CLARA */
-  background: linear-gradient(rgba(11, 12, 16, 0.45), rgba(11, 12, 16, 0.65)),
-              url('https://w0.peakpx.com/wallpaper/1006/977/HD-wallpaper-video-game-left-4-dead.jpg') 
-              center/cover no-repeat fixed;
+  background:
+    linear-gradient(rgba(11, 12, 16, 0.45), rgba(11, 12, 16, 0.65)),
+    url('https://w0.peakpx.com/wallpaper/1006/977/HD-wallpaper-video-game-left-4-dead.jpg')
+    center / cover no-repeat fixed;
   color: var(--text-light);
   line-height: 1.6;
   padding-bottom: 40px;
 }
 
-/* Banner principal con fondo más vistoso */
+/* =========================================
+   BANNER PRINCIPAL
+========================================= */
+
 .dashboard-hero {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(11, 12, 16, 0.2) 0%,
-      rgba(11, 12, 16, 0.8) 100%
-    ),
-    url('https://w0.peakpx.com/wallpaper/1006/977/HD-wallpaper-video-game-left-4-dead.jpg')
-    center/cover;
+  /* Se elimina la imagen duplicada aquí para que use la del body directamente */
+  background: linear-gradient(
+    180deg,
+    rgba(11, 12, 16, 0.2) 0%,
+    rgba(11, 12, 16, 0.8) 100%
+  );
   padding: 4rem 2rem 2rem;
   text-align: center;
 }
 
-/* Header y navegación */
+.dashboard-hero h1 {
+  font-family: 'Permanent Marker', 'Creepster', cursive;
+  font-size: 3.2rem;
+  color: var(--red-danger);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(230, 57, 70, 0.8), 3px 3px 0 #000;
+}
+
+.dashboard-hero p,
+.container p,
+.card-info span,
+.metric-card p {
+  font-family: 'Special Elite', monospace;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   ENCABEZADO Y NAVEGACIÓN
+========================================= */
+
 header {
   background: rgba(15, 15, 15, 0.95);
   padding: 1rem 2rem;
@@ -59,71 +81,113 @@ header {
   font-family: 'Creepster', cursive, sans-serif;
   font-size: 3rem;
   font-weight: normal;
-  color: #e63946; /* Rojo infección */
+  color: #e63946;
   letter-spacing: 5px;
   text-transform: uppercase;
-  text-shadow: 
-    0 0 15px rgba(230, 57, 70, 0.9),
-    3px 3px 0px #000;
+  text-shadow: 0 0 15px rgba(230, 57, 70, 0.9), 3px 3px 0 #000;
   transition: transform 0.3s ease;
 }
 
 .logo span {
   color: var(--green-glow);
   font-size: 3.4rem;
-  text-shadow: 
-    0 0 15px var(--green-glow),
-    3px 3px 0px #000;
+  text-shadow: 0 0 15px var(--green-glow), 3px 3px 0 #000;
 }
+
+/* BOTONES SUPERIORES: MISMO DISEÑO */
 
 nav ul {
   display: flex;
+  align-items: center;
   list-style: none;
-  gap: 20px;
+  gap: 12px;
 }
 
-nav a {
-  font-family: 'Special Elite', cursive, monospace;
-  color: var(--text-light);
-  text-decoration: none;
-  font-size: 1.1rem;
-  letter-spacing: 2px;
+nav ul li a {
+  display: inline-block;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #1f2833, #0b0c10);
+  color: #ffffff !important;
+  border: 1px solid rgba(102, 252, 241, 0.5);
+  border-radius: 6px;
+  font-family: 'Special Elite', 'Trebuchet MS', monospace;
+  font-size: 0.9rem;
   font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  padding: 4px 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
 }
 
-nav a:hover {
-  color: var(--green-glow);
-  text-shadow: 0 0 10px var(--green-glow);
+/* JUEGOS: BRILLO CELESTE */
+nav ul li:nth-child(1) a:hover {
+  background: linear-gradient(135deg, #164454, #10232d);
+  border-color: #66fcf1;
+  box-shadow: 0 0 8px rgba(102, 252, 241, 0.65),
+              0 0 18px rgba(0, 191, 255, 0.35);
+  text-shadow: 0 0 6px rgba(102, 252, 241, 0.7);
+  transform: translateY(-2px);
 }
 
-/* 3. TÍTULOS DE SECCIÓN (EDICIONES DE LA SAGA, SUPERVIVIENTES, ETC.) */
-.section-title, 
+/* SUPERVIVIENTES: BRILLO CELESTE */
+nav ul li:nth-child(2) a:hover {
+  background: linear-gradient(135deg, #164454, #10232d);
+  border-color: #66fcf1;
+  box-shadow: 0 0 8px rgba(102, 252, 241, 0.65),
+              0 0 18px rgba(0, 191, 255, 0.35);
+  text-shadow: 0 0 6px rgba(102, 252, 241, 0.7);
+  transform: translateY(-2px);
+}
+
+/* INFECTADOS: BRILLO ROJO */
+nav ul li:nth-child(3) a {
+  border-color: rgba(230, 57, 70, 0.7);
+}
+
+nav ul li:nth-child(3) a:hover {
+  background: linear-gradient(135deg, #7a111b, #26070a);
+  border-color: #ff3548;
+  box-shadow: 0 0 8px rgba(255, 53, 72, 0.75),
+              0 0 18px rgba(230, 57, 70, 0.5);
+  text-shadow: 0 0 6px rgba(255, 53, 72, 0.8);
+  transform: translateY(-2px);
+}
+
+nav ul li a:active {
+  transform: scale(0.97);
+}
+
+/* =========================================
+   TÍTULOS Y SECCIONES
+========================================= */
+
+.section-title,
 .dashboard-hero h1 {
   font-family: 'Permanent Marker', 'Creepster', cursive;
   letter-spacing: 3px;
   text-transform: uppercase;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #ffffff;
+  border-left: 5px solid var(--red-danger);
+  padding-left: 15px;
+  margin-bottom: 1.5rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
-.dashboard-hero h1 {
-  font-size: 3.2rem;
-  color: var(--red-danger);
-  text-shadow: 0 0 20px rgba(230, 57, 70, 0.8), 3px 3px 0px #000;
-}
+/* =========================================
+   MÉTRICAS
+========================================= */
 
-/* 4. TEXTOS SECUNDARIOS Y PÁRRAFOS (ESTILO DOCUMENTO DE REFUGIO) */
-.dashboard-hero p, 
-.container p, 
-.card-info span,
-.metric-card p {
-  font-family: 'Special Elite', monospace;
-  letter-spacing: 1px;
-}
-
-/* Métricas */
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -140,134 +204,246 @@ nav a:hover {
   border-left: 5px solid var(--green-glow);
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .metric-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
 }
 
 .metric-card h3 {
   font-size: 2.5rem;
-  color: var(--green-glow);
+  color: #ffffff;
 }
 
 .metric-card p {
-  color: var(--text-muted);
+  color: #ffffff;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* Secciones generales */
-.container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 20px;
-}
+/* =========================================
+   FILTROS Y BOTONES
+========================================= */
 
-.section-title {
-  font-size: 2rem;
-  color: var(--text-light);
-  border-left: 5px solid var(--red-danger);
-  padding-left: 15px;
-  margin-bottom: 1.5rem;
-}
-
-/* Filtros */
 .filter-bar {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
-.filter-btn {
-  padding: 8px 18px;
-  background: var(--bg-card);
-  border: 1px solid var(--green-l4d);
-  color: var(--text-light);
-  cursor: pointer;
-  border-radius: 5px;
+button,
+.filter-btn,
+button[type="button"],
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #1f2833, #0b0c10);
+  color: #ffffff !important;
+  border: 1px solid #45a29e;
+  border-radius: 6px;
+  font-size: 0.95rem;
   font-weight: bold;
-  transition: 0.3s;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease,
+              box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.filter-btn.active,
-.filter-btn:hover {
-  background: var(--green-glow);
-  color: #000;
+button:hover,
+.filter-btn:hover,
+button[type="button"]:hover,
+button[type="submit"]:hover {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #263b49, #16212b);
+  border-color: var(--green-glow);
+  box-shadow: 0 0 8px rgba(102, 252, 241, 0.6),
+              0 0 18px rgba(0, 191, 255, 0.25);
+  transform: translateY(-2px);
 }
 
-/* Cuadrícula de personajes */
+.filter-btn.active {
+  background: linear-gradient(135deg, #167c91, #12475c);
+  color: #ffffff !important;
+  border-color: var(--green-glow);
+  box-shadow: 0 0 12px rgba(102, 252, 241, 0.45);
+}
+
+button:active,
+.filter-btn:active {
+  transform: scale(0.97);
+}
+
+button:focus-visible,
+.filter-btn:focus-visible,
+nav a:focus-visible {
+  outline: 2px solid var(--green-glow);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   CUADRÍCULA DE PERSONAJES
+========================================= */
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
 }
 
-/* Tarjetas */
+/* =========================================
+   TARJETAS GLASSMORPHISM
+========================================= */
+
 .character-card {
-  background: var(--bg-card);
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid #333;
-  cursor: pointer;
-  transition: all 0.3s ease;
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(25, 30, 38, 0.68);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.35s ease, border-color 0.35s ease,
+              box-shadow 0.35s ease, background 0.35s ease;
 }
 
-.character-card:hover {
-  transform: scale(1.03);
+.character-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09),
+              transparent 35%, transparent 70%,
+              rgba(255, 255, 255, 0.025));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* SUPERVIVIENTES: AZUL CELESTE */
+
+.character-card:not(.infected-card) {
+  border-color: rgba(102, 252, 241, 0.25);
+}
+
+.character-card:not(.infected-card):hover {
+  transform: translateY(-6px);
+  background: rgba(15, 35, 48, 0.88);
   border-color: var(--green-glow);
-  box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5),
+              0 0 12px rgba(102, 252, 241, 0.65),
+              0 0 28px rgba(0, 191, 255, 0.4),
+              0 0 45px rgba(102, 252, 241, 0.18),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Imágenes de las tarjetas: personaje completo */
+/* IMÁGENES */
+
 .character-card img {
   width: 100%;
   height: 280px;
   object-fit: contain;
   object-position: center;
   display: block;
-  background-color: var(--bg-card);
   flex-shrink: 0;
+  background: transparent;
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* Información de cada personaje */
+.character-card:not(.infected-card):hover img {
+  transform: scale(1.04);
+  filter: brightness(1.12)
+          drop-shadow(0 0 6px rgba(102, 252, 241, 0.85))
+          drop-shadow(0 0 15px rgba(0, 191, 255, 0.55));
+}
+
+/* =========================================
+   INFORMACIÓN Y LETRAS BLANCAS
+========================================= */
+
 .card-info {
+  position: relative;
+  z-index: 2;
   padding: 15px;
   text-align: center;
   margin-top: auto;
+  background: linear-gradient(180deg, rgba(20, 23, 29, 0.25),
+              rgba(10, 12, 16, 0.82));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .card-info h3 {
-  color: var(--green-glow);
-  margin-bottom: 5px;
+  color: #ffffff !important;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  transition: text-shadow 0.3s ease;
+}
+
+.character-card:not(.infected-card):hover .card-info h3 {
+  color: #ffffff !important;
+  text-shadow: 0 0 5px #66fcf1,
+               0 0 12px rgba(0, 191, 255, 0.9);
 }
 
 .card-info span {
+  display: inline-block;
   font-size: 0.85rem;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 3px 8px;
-  border-radius: 12px;
-  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: #ffffff !important;
+  background: rgba(10, 12, 16, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Infectados */
+/* =========================================
+   INFECTADOS: BRILLO ROJO
+========================================= */
+
+.infected-card {
+  border-color: rgba(230, 57, 70, 0.25);
+}
+
 .infected-card:hover {
-  border-color: var(--red-danger);
-  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+  transform: translateY(-6px);
+  background: rgba(55, 20, 25, 0.88);
+  border-color: rgba(255, 35, 45, 0.85);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5),
+              0 0 12px rgba(230, 57, 70, 0.65),
+              0 0 28px rgba(230, 57, 70, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
-.infected-card .card-info h3 {
-  color: var(--red-danger);
+.infected-card:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.1)
+          drop-shadow(0 0 8px rgba(230, 57, 70, 0.85))
+          drop-shadow(0 0 15px rgba(230, 57, 70, 0.45));
 }
 
-/* Ventana modal */
+.infected-card .card-info h3,
+.infected-card:hover .card-info h3 {
+  color: #ffffff !important;
+}
+
+.infected-card:hover .card-info h3 {
+  text-shadow: 0 0 5px rgba(230, 57, 70, 0.9),
+               0 0 12px rgba(230, 57, 70, 0.8);
+}
+
+/* =========================================
+   VENTANA MODAL
+========================================= */
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -285,6 +461,7 @@ nav a:hover {
 
 .modal-content {
   background: var(--bg-card);
+  color: #ffffff;
   max-width: 600px;
   width: 100%;
   border-radius: 12px;
@@ -305,15 +482,23 @@ nav a:hover {
   top: 15px;
   right: 20px;
   font-size: 1.8rem;
-  color: var(--text-muted);
+  color: #ffffff !important;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 
 .close-btn:hover {
-  color: var(--red-danger);
+  color: #ffffff !important;
+  background: transparent;
+  border: none;
+  text-shadow: 0 0 10px var(--red-danger);
+  box-shadow: none;
+  transform: scale(1.1);
 }
 
-/* Cabecera del modal */
 .modal-header {
   display: flex;
   gap: 20px;
@@ -321,7 +506,6 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-/* MODIFICADO: imagen completa dentro del círculo */
 .modal-header img {
   width: 140px;
   height: 140px;
@@ -334,32 +518,36 @@ nav a:hover {
 }
 
 .modal-body p {
+  color: #ffffff;
   margin-bottom: 10px;
   font-size: 1rem;
 }
 
 .modal-body strong {
-  color: var(--green-glow);
+  color: #ffffff;
 }
 
 .infected-border .modal-body strong {
-  color: var(--red-danger);
+  color: #ffffff;
 }
 
-/* Animación */
+/* ANIMACIÓN MODAL */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: scale(0.9);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-/* Adaptación para celulares */
+/* =========================================
+   ADAPTACIÓN PARA CELULARES
+========================================= */
+
 @media (max-width: 600px) {
   header {
     padding: 1rem;
@@ -370,7 +558,12 @@ nav a:hover {
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
+  }
+
+  nav ul li a {
+    padding: 8px 12px;
+    font-size: 0.8rem;
   }
 
   .logo {
@@ -390,6 +583,12 @@ nav a:hover {
     gap: 12px;
   }
 
+  .character-card {
+    border-radius: 9px;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+  }
+
   .character-card img {
     height: 210px;
   }
@@ -406,6 +605,12 @@ nav a:hover {
     font-size: 0.75rem;
   }
 
+  button,
+  .filter-btn {
+    padding: 9px 12px;
+    font-size: 0.8rem;
+  }
+
   .modal-content {
     padding: 20px;
   }
@@ -420,7 +625,8 @@ nav a:hover {
   }
 }
 
-/* Pantallas muy pequeñas */
+/* PANTALLAS MUY PEQUEÑAS */
+
 @media (max-width: 360px) {
   .cards-grid {
     grid-template-columns: 1fr;
@@ -434,4 +640,265 @@ nav a:hover {
     width: 90px;
     height: 90px;
   }
+}
+
+/* ACCESIBILIDAD: REDUCIR ANIMACIONES */
+
+@media (prefers-reduced-motion: reduce) {
+  .character-card,
+  .character-card img,
+  .card-info h3,
+  button,
+  .filter-btn,
+  nav ul li a {
+    transition: none;
+  }
+
+  .character-card:hover,
+  .character-card:hover img {
+    transform: none;
+  }
+}
+/* =========================================
+   FOOTER TÁCTICO CEDA & ALERTA DE RADIO
+========================================= */
+
+.ceda-footer {
+  background: #0d1117;
+  border-top: 2px solid #e63946;
+  margin-top: 4rem;
+  color: #c5c6c7;
+  font-family: 'Special Elite', monospace;
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.8);
+}
+
+/* --- CINTA DE ALERTAS (TICKER / CARROUSEL) --- */
+.quotes-ticker {
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 15px;
+  overflow: hidden;
+}
+
+.ticker-label {
+  background: #e63946;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+  animation: pulse-danger 2s infinite;
+}
+
+.ticker-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+#game-quote {
+  display: inline-block;
+  color: #66fcf1;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* EFECTO PARPADEO EN LA ALERTA */
+@keyframes pulse-danger {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* --- CUERPO DEL FOOTER --- */
+.footer-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  gap: 30px;
+}
+
+/* SELLO / ESTAMPA DE CEDA */
+.ceda-badge-container {
+  max-width: 450px;
+}
+
+.ceda-stamp {
+  display: inline-block;
+  border: 3px double #f1faee;
+  padding: 5px 15px;
+  background: rgba(230, 57, 70, 0.15);
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.ceda-title {
+  font-family: 'Permanent Marker', cursive, sans-serif;
+  font-size: 1.8rem;
+  color: #e63946;
+  font-weight: bold;
+  letter-spacing: 4px;
+  display: block;
+  line-height: 1;
+}
+
+.ceda-sub {
+  font-size: 0.65rem;
+  color: #a8dadc;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ceda-warning {
+  font-size: 0.85rem;
+  color: #8b949e;
+  line-height: 1.4;
+}
+
+/* SECCIÓN DE CREDITOS DEL EQUIPO */
+.credits-section h3 {
+  font-size: 1rem;
+  color: #45a29e;
+  margin-bottom: 15px;
+  letter-spacing: 1.5px;
+  border-left: 3px solid #66fcf1;
+  padding-left: 10px;
+}
+
+.team-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.team-links a {
+  color: #edf5e1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  background: #1f2833;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #333333;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.team-links a:hover {
+  background: #45a29e;
+  color: #0b0c10;
+  border-color: #66fcf1;
+  transform: translateX(6px);
+  box-shadow: 0 0 12px rgba(102, 252, 241, 0.4);
+}
+
+/* COPYRIGHT BAR */
+.footer-bottom {
+  background: #090d12;
+  text-align: center;
+  padding: 15px 20px;
+  border-top: 1px solid #21262d;
+  font-size: 0.8rem;
+  color: #6e7681;
+}
+/* =========================================
+   ESTILOS DEL BOTÓN DE EMERGENCIA
+========================================= */
+.emergency-toggle-btn {
+  background: rgba(46, 196, 182, 0.15);
+  border: 1px solid #2ec4b6;
+  color: #2ec4b6;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Special Elite', monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.emergency-toggle-btn:hover {
+  background: #2ec4b6;
+  color: #0b0c10;
+  box-shadow: 0 0 10px rgba(46, 196, 182, 0.6);
+}
+
+/* =========================================
+   MODO 1: VISIÓN NOCTURNA (ESTILO L4D)
+========================================= */
+body.night-vision-mode {
+  filter: hue-rotate(90deg) contrast(1.3) brightness(1.1);
+}
+
+/* Mantiene los textos legibles y con el brillo verde clásico de visor nocturno */
+body.night-vision-mode .main-header,
+body.night-vision-mode .ceda-footer {
+  box-shadow: 0 0 20px rgba(46, 196, 182, 0.4);
+}
+
+/* =========================================
+   MODO 2: ALERTA ROJA CEDA (EMERGENCIA MÁXIMA)
+========================================= */
+body.ceda-alert-mode {
+  filter: hue-rotate(-30deg) contrast(1.4) brightness(0.95);
+}
+
+body.ceda-alert-mode .main-header {
+  border-bottom: 2px solid #ff0054;
+  box-shadow: 0 0 25px rgba(255, 0, 84, 0.6);
+}
+
+/* =========================================
+   ESTILO UNIFICADO PARA EL BOTÓN DE NAVEGACIÓN
+========================================= */
+.nav-btn-action {
+  cursor: pointer;
+  background: #161b22; /* Fondo sutil igual que los otros botones */
+  border: 1px solid #30363d; /* Borde visible por defecto */
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  color: #edf5e1;
+  text-decoration: none;
+}
+
+.nav-btn-action:hover {
+  background: #1f2833;
+  border-color: #66fcf1;
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+}
+
+/* Colores y efectos hover personalizados según el modo activo */
+body.night-vision-mode .nav-btn-action {
+  color: #2ec4b6 !important;
+  border-color: #2ec4b6 !important;
+  background: rgba(46, 196, 182, 0.1);
+}
+
+body.night-vision-mode .nav-btn-action:hover {
+  background: rgba(46, 196, 182, 0.3) !important;
+  border-color: #2ec4b6 !important;
+  box-shadow: 0 0 15px rgba(46, 196, 182, 0.7) !important;
+  color: #ffffff !important;
+}
+
+body.ceda-alert-mode .nav-btn-action {
+  color: #ff0054 !important;
+  border-color: #ff0054 !important;
+  background: rgba(255, 0, 84, 0.1);
+}
+
+body.ceda-alert-mode .nav-btn-action:hover {
+  background: rgba(255, 0, 84, 0.3) !important;
+  border-color: #ff0054 !important;
+  box-shadow: 0 0 15px rgba(255, 0, 84, 0.7) !important;
+  color: #ffffff !important;
 }
