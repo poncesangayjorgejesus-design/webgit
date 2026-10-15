@@ -8,16 +8,25 @@
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+ feature/survivors-data
       <header>
     <div class="logo">LEFT <span>4</span> DEAD</div>
     <nav>
       <ul>
         <li><a href="#juegos">Juegos</a></li>
+
+    <header>
+    <div class="logo">LEFT <span>4</span> DEAD</div>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+ master
         <li><a href="#survivors">Supervivientes</a></li>
         <li><a href="#infected">Infectados</a></li>
       </ul>
     </nav>
   </header>
+ feature/survivors-data
 
   <section id="juegos" class="container" style="text-align: center; margin: 2rem auto;">
     <h2 class="section-title" style="display: inline-block; border-left: 5px solid #45a29e; padding-left: 15px; margin-bottom: 2rem; color: #edf5e1;">EDICIONES DE LA SAGA</h2>
@@ -45,6 +54,31 @@
     </div>
   </section>
 
+
+  <section id="dashboard" class="dashboard-hero">
+    <h1>PANEL DE CONTROL TÁCTICO</h1>
+    <p>Monitoreo e información en tiempo real sobre la infección y supervivientes.</p>
+    
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <h3 id="survivor-count">8</h3>
+        <p>Supervivientes Registrados</p>
+      </div>
+      <div class="metric-card">
+        <h3 id="infected-count">8</h3>
+        <p>Infectados Especiales</p>
+      </div>
+      <div class="metric-card">
+        <h3>100%</h3>
+        <p>Tasa de Infección</p>
+      </div>
+      <div class="metric-card">
+        <h3>L4D1 & L4D2</h3>
+        <p>Juegos Soportados</p>
+      </div>
+    </div>
+  </section>
+
   <section id="survivors" class="container">
     <h2 class="section-title">SUPERVIVIENTES (8)</h2>
     <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en cualquier personaje para ver su biografía y detalles.</p>
@@ -56,19 +90,29 @@
     </div>
 
     <div class="cards-grid" id="survivors-grid">
+ feature/survivors-data
       
     </div>
   </section>
 
+
+    </div>
+  </section> 
+ master
   <section id="infected" class="container">
     <h2 class="section-title" style="border-color: #e63946;">INFECTADOS ESPECIALES (8)</h2>
     <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en un infectado para analizar sus habilidades y nivel de amenaza.</p>
 
     <div class="cards-grid" id="infected-grid">
+
       
     </div>
   </section>
 
+      <!-- Aqui cargaran las tarjetas con JS -->
+    </div>
+  </section>
+ 
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal-content" id="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -87,6 +131,7 @@
     </div>
   </div>
 
+
   <!-- Script para reproducir los videos locales directamente en la tarjeta -->
   <script>
     function playLocalVideo(id, videoPath) {
@@ -101,5 +146,9 @@
   </script>
 
   <script src="js/main.js"></script>
+
+</body>
+</html> 
+
 </body>
 </html>
