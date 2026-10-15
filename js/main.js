@@ -321,7 +321,7 @@ function toggleNightVision() {
 // ==========================================
 // 8. MÚSICA AMBIENTAL (SAFE ROOM)
 // ==========================================
-const safeRoomMusic = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=sweet-love-115033.mp3');
+const safeRoomMusic = new Audio('audio/intro.mp3');
 safeRoomMusic.loop = true;
 safeRoomMusic.volume = 0.3;
 
