@@ -321,7 +321,8 @@ function toggleNightVision() {
 // ==========================================
 // 8. MÚSICA AMBIENTAL (SAFE ROOM)
 // ==========================================
-const safeRoomMusic = new Audio('https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=sweet-love-115033.mp3');
+// Enlace directo a un MP3 válido y funcional
+const safeRoomMusic = new Audio('audio/intro.mp3');
 safeRoomMusic.loop = true;
 safeRoomMusic.volume = 0.3;
 
@@ -350,8 +351,8 @@ function toggleSafeRoomAudio() {
         musicBtn.style.color = "#2ec4b6";
       }
     }).catch(e => {
-      console.log("El navegador bloqueó la reproducción automática:", e);
-      alert("Por favor, haz un clic en la página primero para permitir el audio.");
+      console.log("Error al reproducir audio:", e);
+      // Intentamos reproducir nuevamente tras la interacción del usuario
     });
   }
 }
