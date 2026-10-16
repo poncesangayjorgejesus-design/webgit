@@ -7,7 +7,37 @@
   <!-- Enlace a la hoja de estilos dentro de la carpeta css -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
+<<<<<<< HEAD
+<body class="intro-locked">
+  <!-- Pantalla inicial: la puerta del refugio es la única interacción previa. -->
+  <div id="safe-room" class="safe-room sr-visible" role="dialog" aria-modal="true" aria-label="Entrada al refugio">
+    <div class="sr-atmosphere" aria-hidden="true"></div>
+    <div class="sr-top"><span class="sr-pulse"></span> CEDA // ZONA DE CONTENCIÓN <span class="sr-frequency">FRECUENCIA 04.11 MHz</span></div>
+    <div class="sr-layout">
+      <div class="sr-heading"><span>UBICACIÓN DETECTADA · ÁREA SEGURA</span><h2>ÚLTIMO<br><em>REFUGIO</em></h2><p>La puerta sigue cerrada. ¿Estás listo para entrar?</p></div>
+      <div class="sr-perspective" aria-hidden="true">
+        <div class="sr-doorway">
+          <div class="sr-inside"><span class="sr-inside-light"></span><span>ACCESO AUTORIZADO</span></div>
+          <div class="sr-door-hinge"><img src="assets/refugio/puerta-refugio.webp" alt="" class="sr-door-image" width="540" height="900" decoding="async"></div>
+          <div class="sr-frame-top"></div><div class="sr-frame-left"></div><div class="sr-frame-right"></div>
+        </div>
+      </div>
+      <div class="sr-actions">
+        <span class="sr-instruction" id="sr-instruction">PROTECCIÓN NIVEL 01 // EN ESPERA</span>
+        <button type="button" class="sr-open" id="sr-open"><span class="sr-open-icon" aria-hidden="true">↗</span> ABRIR REFUGIO</button>
+        <button type="button" class="sr-skip" id="sr-skip">SALTAR Y ENTRAR <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+    <div class="sr-bottom"><span>LA SUPERVIVENCIA ES UNA DECISIÓN</span><span>EST. 2008 — 2009</span></div>
+  </div>
+
+  <div class="ambient-grain" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+=======
 <body>
+>>>>>>> master
 
   <!-- ==========================================
        HEADER / NAVEGACIÓN PRINCIPAL
@@ -19,6 +49,10 @@
         <li><a href="#juegos">Juegos</a></li>
         <li><a href="#survivors">Supervivientes</a></li>
         <li><a href="#infected">Infectados</a></li>
+<<<<<<< HEAD
+        <li><a href="#campanas">Campañas</a></li>
+=======
+>>>>>>> master
         <li><a href="javascript:void(0);" id="night-vision-btn" class="nav-btn-action" onclick="toggleNightVision()">Visión Nocturna</a></li>
         
         <!-- Botón de Música Ambiental -->
@@ -34,6 +68,17 @@
   <!-- ==========================================
        SECCIÓN 1: EDICIONES DE LA SAGA (TRÁILERES)
        ========================================== -->
+<<<<<<< HEAD
+  <div class="survival-banner"><span class="banner-live"></span><span>ESTADO DEL SISTEMA: INFECTADO</span><span class="banner-coordinate">ÚLTIMA TRANSMISIÓN // SECTOR 04</span></div>
+  <div class="hero-intro container" aria-label="Presentación">
+    <div class="hero-small-label">ARCHIVOS CLASIFICADOS · UNIVERSO LEFT 4 DEAD</div>
+    <h1>CUANDO CAE LA NOCHE,<br><em>SOLO QUEDA SOBREVIVIR.</em></h1>
+    <p>Explora los expedientes de los supervivientes, estudia las amenazas y vuelve a vivir las dos entregas de la saga.</p>
+    <div class="hero-actions"><a href="#juegos" class="hero-primary">EXPLORAR EXPEDIENTES <span>↗</span></a><a href="#infected" class="hero-secondary">VER AMENAZAS <span>→</span></a></div>
+    <div class="hero-details"><span>CEDA // ACCESO RESTRINGIDO</span><span>DESPLÁZATE PARA EXPLORAR ↓</span></div>
+  </div>
+=======
+>>>>>>> master
   <section id="juegos" class="container" style="text-align: center; margin: 2rem auto;">
     <h2 class="section-title" style="display: inline-block; border-left: 5px solid #45a29e; padding-left: 15px; margin-bottom: 2rem; color: #edf5e1;">EDICIONES DE LA SAGA</h2>
     <p style="margin-bottom: 20px; color: #c5c6c7;">Haz clic en la portada de cualquier entrega para reproducir su tráiler.</p>
@@ -116,6 +161,79 @@
     <div class="cards-grid" id="infected-grid"></div>
   </section>
 
+<<<<<<< HEAD
+<section id="campanas" class="container campaigns-section">
+  <div class="campaign-heading"><span class="campaign-eyebrow">CEDA // ARCHIVOS DESCLASIFICADOS</span><h2 class="section-title">CAMPAÑAS DE SUPERVIVENCIA</h2><p>Recorre los escenarios de ambas entregas. Selecciona una campaña para abrir su expediente y explorar la galería.</p></div>
+  <div class="campaign-filters" role="group" aria-label="Filtrar campañas"><button type="button" class="campaign-filter active" data-game="all">TODAS</button><button type="button" class="campaign-filter" data-game="l4d1">LEFT 4 DEAD 1</button><button type="button" class="campaign-filter" data-game="l4d2">LEFT 4 DEAD 2</button></div>
+  <div class="campaign-explorer">
+    <div class="campaign-featured" id="campaign-featured" aria-live="polite">
+      <div class="campaign-scene"><img id="campaign-featured-img" src="assets/campanas/no-mercy.webp" alt="Escenario de No Mercy"><div class="campaign-image-shade"></div><span class="campaign-image-caption" id="campaign-image-caption">ARCHIVO 001 // CEDA</span></div>
+      <div class="campaign-featured-info"><span class="campaign-eyebrow" id="campaign-featured-game">LEFT 4 DEAD 1</span><h3 id="campaign-featured-name">No Mercy</h3><p id="campaign-featured-desc"></p><div class="campaign-setting"><span>ESCENARIO</span><strong id="campaign-featured-setting"></strong></div><div class="campaign-controls"><button id="campaign-prev" type="button" aria-label="Campaña anterior">← ANTERIOR</button><span id="campaign-counter" aria-live="polite"></span><button id="campaign-next" type="button" aria-label="Campaña siguiente">SIGUIENTE →</button></div></div>
+    </div>
+    <div class="campaign-gallery-heading"><h3>GALERÍA DE CAMPAÑAS</h3><span>SELECCIONA UN ARCHIVO PARA EXPLORARLO</span></div>
+    <div class="campaign-gallery" id="campaign-gallery" role="list"></div>
+  </div>
+  <p class="campaign-footnote">Pósters de campañas incluidos localmente para que cada escenario coincida con su nombre y se vea también sin conexión.</p>
+</section>
+
+  <!-- ==========================================
+       MODAL DE DETALLES
+       ========================================== -->
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+    <div class="modal-content" id="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-btn" type="button" aria-label="Cerrar ficha" onclick="closeModal()">&times;</button>
+      <div class="modal-grid-layout">
+        <aside class="modal-media-panel">
+          <div class="modal-media-frame">
+            <img id="modal-img" src="" alt="">
+            <span class="modal-floating-pill" id="modal-threat-pill"></span>
+          </div>
+          <div class="modal-side-stats">
+            <div class="modal-mini-card">
+              <span class="mini-label">CLASIFICACIÓN</span>
+              <strong id="modal-role"></strong>
+            </div>
+            <div class="modal-mini-card">
+              <span class="mini-label">ORIGEN</span>
+              <strong id="modal-origin"></strong>
+            </div>
+          </div>
+        </aside>
+        <section class="modal-main-panel">
+          <div class="modal-header">
+            <div class="modal-heading-row">
+              <span class="modal-tag" id="modal-tag"></span>
+              <span class="modal-status" id="modal-status"></span>
+            </div>
+            <h2 id="modal-title"></h2>
+            <p class="modal-subtitle" id="modal-subtitle"></p>
+          </div>
+          <div class="modal-body">
+            <div class="modal-summary-card">
+              <span class="modal-section-kicker">EXPEDIENTE</span>
+              <p id="modal-desc"></p>
+            </div>
+            <div class="modal-detail-grid">
+              <div class="modal-detail-card">
+                <span class="detail-label">ROL / HABILIDAD</span>
+                <p id="modal-role-detail"></p>
+              </div>
+              <div class="modal-detail-card">
+                <span class="detail-label">DETALLE CLAVE</span>
+                <p id="modal-extra"></p>
+              </div>
+              <div class="modal-detail-card">
+                <span class="detail-label">ESTADO TÁCTICO</span>
+                <p id="modal-tactical"></p>
+              </div>
+              <div class="modal-detail-card">
+                <span class="detail-label">PERFIL</span>
+                <p id="modal-metric"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+=======
   <!-- ==========================================
        MODAL DE DETALLES
        ========================================== -->
@@ -133,6 +251,7 @@
         <p id="modal-desc"></p>
         <p><strong>Rol / Habilidad:</strong> <span id="modal-role"></span></p>
         <p><strong>Detalle Clave:</strong> <span id="modal-extra"></span></p>
+>>>>>>> master
       </div>
     </div>
   </div>
@@ -197,6 +316,11 @@
   </script>
 
   <script src="js/main.js"></script>
+<<<<<<< HEAD
+  <script src="js/experiencia.js"></script>
+  <script src="js/campanas.js"></script>
+=======
+>>>>>>> master
 
 </body>
 </html>

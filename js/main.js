@@ -221,28 +221,72 @@ function filterSurvivors(game) {
 function openModal(data, isInfected) {
   const overlay = document.getElementById("modal-overlay");
   const content = document.getElementById("modal-content");
-  if (!overlay) return;
+  if (!overlay || !content) return;
 
-  document.getElementById("modal-img").src = data.img;
-  document.getElementById("modal-title").innerText = data.name;
-  document.getElementById("modal-subtitle").innerText = isInfected ? `Amenaza: ${data.threat}` : data.role;
-  document.getElementById("modal-desc").innerText = data.desc;
-  document.getElementById("modal-role").innerText = isInfected ? data.ability : data.role;
-  document.getElementById("modal-extra").innerText = data.extra;
+  const title = document.getElementById("modal-title");
+  const subtitle = document.getElementById("modal-subtitle");
+  const desc = document.getElementById("modal-desc");
+  const role = document.getElementById("modal-role");
+  const roleDetail = document.getElementById("modal-role-detail");
+  const extra = document.getElementById("modal-extra");
+  const origin = document.getElementById("modal-origin");
+  const tag = document.getElementById("modal-tag");
+  const status = document.getElementById("modal-status");
+  const tactical = document.getElementById("modal-tactical");
+  const metric = document.getElementById("modal-metric");
+  const threatPill = document.getElementById("modal-threat-pill");
+  const img = document.getElementById("modal-img");
 
+  img.src = data.img;
+  img.alt = data.name;
+  title.innerText = data.name;
+  desc.innerText = data.desc;
+  extra.innerText = data.extra;
+
+  content.classList.remove(...Array.from(content.classList).filter(c => c.startsWith("fx-")));
   if (isInfected) {
+    content.classList.add(`fx-${data.id}`);
+    subtitle.innerText = `Amenaza: ${data.threat}`;
+    role.innerText = data.ability;
+    roleDetail.innerText = data.ability;
+    origin.innerText = "Infectado especial";
+    tag.innerText = "HOSTIL";
+    status.innerText = "ALARMA BIOLÓGICA";
+    tactical.innerText = `Neutralización prioritaria. ${data.extra}`;
+    metric.innerText = data.threat;
+    threatPill.innerText = data.threat;
     content.classList.add("infected-border");
   } else {
+    const gameLabel = data.game === "l4d1" ? "Left 4 Dead" : "Left 4 Dead 2";
+    subtitle.innerText = data.role;
+    role.innerText = data.role;
+    roleDetail.innerText = data.role;
+    origin.innerText = gameLabel;
+    tag.innerText = data.game === "l4d1" ? "SUPERVIVIENTE · ORIGINAL" : "SUPERVIVIENTE · EVACUACIÓN";
+    status.innerText = "OPERATIVO";
+    tactical.innerText = "Apto para supervivencia de grupo y respuesta bajo presión.";
+    metric.innerText = `Especialidad: ${data.role}`;
+    threatPill.innerText = gameLabel;
     content.classList.remove("infected-border");
   }
 
-  overlay.style.display = "flex";
+  overlay.classList.add("is-visible");
+  if (isInfected && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    content.classList.remove("infected-enter");
+    void content.offsetWidth;
+    content.classList.add("infected-enter");
+  }
+  overlay.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
 }
 
 function closeModal() {
   const overlay = document.getElementById("modal-overlay");
   if (overlay) {
-    overlay.style.display = "none";
+    overlay.classList.remove("is-visible");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    document.getElementById("modal-content")?.classList.remove("infected-enter");
   }
 }
 
@@ -252,6 +296,35 @@ window.onclick = function(event) {
     closeModal();
   }
 };
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
+
+(function setupModalInteractivity() {
+  const content = document.getElementById("modal-content");
+  if (!content || !window.matchMedia("(pointer:fine)").matches) return;
+
+  content.addEventListener("pointermove", (event) => {
+    if (!document.body.classList.contains("modal-open")) return;
+    const rect = content.getBoundingClientRect();
+    const px = (event.clientX - rect.left) / rect.width - 0.5;
+    const py = (event.clientY - rect.top) / rect.height - 0.5;
+    content.style.setProperty("--rx", `${(-py * 4).toFixed(2)}deg`);
+    content.style.setProperty("--ry", `${(px * 5).toFixed(2)}deg`);
+    content.style.setProperty("--sx", `${((event.clientX - rect.left) / rect.width) * 100}%`);
+    content.style.setProperty("--sy", `${((event.clientY - rect.top) / rect.height) * 100}%`);
+  });
+
+  content.addEventListener("pointerleave", () => {
+    content.style.setProperty("--rx", "0deg");
+    content.style.setProperty("--ry", "0deg");
+    content.style.setProperty("--sx", "50%");
+    content.style.setProperty("--sy", "25%");
+  });
+})();
 
 // ==========================================
 // 5. CARRUSEL DE FRASES DE LA CEDA
