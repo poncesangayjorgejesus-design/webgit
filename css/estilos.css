@@ -832,28 +832,69 @@ nav a:focus-visible {
 }
 
 /* =========================================
-   MODO 1: VISIÓN NOCTURNA (ESTILO L4D)
+   MODO 1: VISIÓN NOCTURNA (TONO VERDE COMPLETO - SIN LAG)
 ========================================= */
+/* Tinte verde tétrico al fondo general */
 body.night-vision-mode {
-  filter: hue-rotate(90deg) contrast(1.3) brightness(1.1);
+  background-color: #04100c !important;
 }
 
-/* Mantiene los textos legibles y con el brillo verde clásico de visor nocturno */
+/* Tinte verde intenso a las imágenes de los personajes, campañas y tarjetas */
+body.night-vision-mode img,
+body.night-vision-mode .character-card,
+body.night-vision-mode .metric-card,
+body.night-vision-mode .campaign-explorer {
+  filter: hue-rotate(90deg) saturate(2.5) contrast(1.2) brightness(1.05);
+}
+
+/* Colores de textos y bordes Neón Verde */
 body.night-vision-mode .main-header,
 body.night-vision-mode .ceda-footer {
+  border-color: #2ec4b6 !important;
   box-shadow: 0 0 20px rgba(46, 196, 182, 0.4);
 }
 
-/* =========================================
-   MODO 2: ALERTA ROJA CEDA (EMERGENCIA MÁXIMA)
-========================================= */
-body.ceda-alert-mode {
-  filter: hue-rotate(-30deg) contrast(1.4) brightness(0.95);
+body.night-vision-mode h1, 
+body.night-vision-mode h2, 
+body.night-vision-mode h3, 
+body.night-vision-mode p,
+body.night-vision-mode span,
+body.night-vision-mode button {
+  color: #66fcf1 !important;
+  text-shadow: 0 0 8px rgba(102, 252, 241, 0.7);
 }
 
+
+/* =========================================
+   MODO 2: ALERTA ROJA CEDA (TONO ROJO COMPLETO - SIN LAG)
+========================================= */
+/* Tinte rojo tétrico al fondo general */
+body.ceda-alert-mode {
+  background-color: #1a0406 !important;
+}
+
+/* Tinte rojo intenso a las imágenes de los personajes y tarjetas */
+body.ceda-alert-mode img,
+body.ceda-alert-mode .character-card,
+body.ceda-alert-mode .metric-card,
+body.ceda-alert-mode .campaign-explorer {
+  filter: hue-rotate(-30deg) saturate(2.8) contrast(1.3) brightness(0.95);
+}
+
+/* Colores de textos y bordes Rojo Emergencia */
 body.ceda-alert-mode .main-header {
-  border-bottom: 2px solid #ff0054;
+  border-bottom: 2px solid #ff0054 !important;
   box-shadow: 0 0 25px rgba(255, 0, 84, 0.6);
+}
+
+body.ceda-alert-mode h1, 
+body.ceda-alert-mode h2, 
+body.ceda-alert-mode h3, 
+body.ceda-alert-mode p,
+body.ceda-alert-mode span,
+body.ceda-alert-mode button {
+  color: #ff3548 !important;
+  text-shadow: 0 0 8px rgba(255, 53, 72, 0.8);
 }
 
 /* =========================================
