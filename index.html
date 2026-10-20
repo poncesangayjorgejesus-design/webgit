@@ -1,15 +1,267 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Left 4 Dead — Dashboard Táctico</title>
+
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-    <h1>Titulo NUEVO Modificado</h1>
-    <form action="n" method="get">
-        <input type="button" value="Enviar">
-    </form>
+<body class="intro-locked">
+ 
+  <div id="safe-room" class="safe-room sr-visible" role="dialog" aria-modal="true" aria-label="Entrada al refugio">
+    <div class="sr-atmosphere" aria-hidden="true"></div>
+    <div class="sr-layout sr-layout-minimal">
+      <h1 class="sr-callout">¡RÁPIDO, ENTRA AL REFUGIO!</h1>
+      <div class="sr-perspective sr-perspective-main">
+        <div class="sr-doorway">
+          <div class="sr-inside" aria-hidden="true">
+            <img src="assets/refugio/fondo-refugio-zombies.png" alt="" class="sr-inside-image" width="760" height="1351" decoding="async">
+            <span class="sr-inside-overlay"></span>
+          </div>
+          <button type="button" class="sr-door-trigger" id="sr-door-trigger" aria-label="Abrir refugio">
+            <div class="sr-door-hinge"><img src="assets/refugio/puerta-refugio.webp" alt="Puerta del refugio" class="sr-door-image" width="540" height="900" decoding="async"></div>
+          </button>
+          <div class="sr-frame-top"></div><div class="sr-frame-left"></div><div class="sr-frame-right"></div>
+        </div>
+      </div>
+      <button type="button" class="sr-skip sr-skip-minimal" id="sr-skip">SALTAR <span aria-hidden="true">→</span></button>
+      <span class="sr-instruction sr-instruction-hidden" id="sr-instruction">PROTECCIÓN NIVEL 01 // TOCA LA PUERTA</span>
+    </div>
+  </div>
+
+  <div class="ambient-grain" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+
+
+  <header class="main-header">
+    <div class="logo">LEFT <span>4</span> DEAD</div>
+    <nav>
+      <ul>
+        <li><a href="#juegos">Juegos</a></li>
+        <li><a href="#survivors">Supervivientes</a></li>
+        <li><a href="#infected">Infectados</a></li>
+        <li><a href="#campanas">Campañas</a></li>
+        <li><a href="javascript:void(0);" id="night-vision-btn" class="nav-btn-action" onclick="toggleNightVision()">Visión Nocturna</a></li>
+        
+        <li>
+          <a href="javascript:void(0);" id="audio-toggle-btn" class="nav-btn-action" onclick="toggleSafeRoomAudio()">
+            🎵 <span id="audio-status">Música: OFF</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
     
+
+  <div class="survival-banner"><span class="banner-live"></span><span>ESTADO DEL SISTEMA: INFECTADO</span><span class="banner-coordinate"></span></div>
+  <div class="hero-intro container" aria-label="Presentación">
+    <div class="hero-small-label">ARCHIVOS CLASIFICADOS · UNIVERSO LEFT 4 DEAD</div>
+    <h1>CUANDO CAE LA NOCHE,<br><em>SOLO QUEDA SOBREVIVIR.</em></h1>
+    <p>Explora los expedientes de los supervivientes, estudia las amenazas y vuelve a vivir las dos entregas de la saga.</p>
+    <div class="hero-actions"><a href="#juegos" class="hero-primary">EXPLORAR EXPEDIENTES <span>↗</span></a><a href="#infected" class="hero-secondary">VER AMENAZAS <span>→</span></a></div>
+    <div class="hero-details"></div>
+  </div>
+  <section id="juegos" class="container" style="text-align: center; margin: 2rem auto;">
+    <h2 class="section-title" style="display: inline-block; border-left: 5px solid #45a29e; padding-left: 15px; margin-bottom: 2rem; color: #edf5e1;">EDICIONES DE LA SAGA</h2>
+    <p style="margin-bottom: 20px; color: #c5c6c7;">Haz clic en la portada de cualquier entrega para reproducir su tráiler.</p>
+    
+    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+
+      <div id="card-l4d1" style="background: #1f2833; padding: 15px; border-radius: 10px; max-width: 280px; width: 100%; border: 1px solid #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+        <div id="media-container-1" style="cursor: pointer;" onclick="playLocalVideo('1', 'css/Videos/left4dead1.mp4')">
+          <img src="https://upload.wikimedia.org/wikipedia/en/5/5b/Left4Dead_Windows_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" alt="Left 4 Dead 1 Cover" style="width: 100%; height: 350px; object-fit: cover; border-radius: 6px;">
+          <span style="display: block; margin-top: 8px; font-size: 0.85rem; color: #e63946; font-weight: bold;">▶️ Reproducir Tráiler</span>
+        </div>
+        <h3 style="color: #66fcf1; margin-top: 15px; font-size: 1.2rem;">Left 4 Dead (2008)</h3>
+      </div>
+
+      <div id="card-l4d2" style="background: #1f2833; padding: 15px; border-radius: 10px; max-width: 280px; width: 100%; border: 1px solid #333; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+        <div id="media-container-2" style="cursor: pointer;" onclick="playLocalVideo('2', 'css/Videos/left4dead2.mp4')">
+          <img src="https://preview.redd.it/what-introduced-you-to-left-4-dead-2-made-you-start-playing-v0-jyygj7dhmm1c1.jpg?auto=webp&s=417046f53707803b0f14ef024afd5069320a2201" alt="Left 4 Dead 2 Cover" style="width: 100%; height: 350px; object-fit: cover; border-radius: 6px;">
+          <span style="display: block; margin-top: 8px; font-size: 0.85rem; color: #e63946; font-weight: bold;">▶️ Reproducir Tráiler</span>
+        </div>
+        <h3 style="color: #66fcf1; margin-top: 15px; font-size: 1.2rem;">Left 4 Dead 2 (2009)</h3>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="dashboard" class="dashboard-hero">
+    <h1>PANEL DE CONTROL TÁCTICO</h1>
+    
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <h3 id="survivor-count">8</h3>
+        <p>Supervivientes Registrados</p>
+      </div>
+      <div class="metric-card">
+        <h3 id="infected-count">8</h3>
+        <p>Infectados Especiales</p>
+      </div>
+      <div class="metric-card">
+        <h3>100%</h3>
+        <p>Tasa de Infección</p>
+      </div>
+      <div class="metric-card">
+        <h3>L4D1 & L4D2</h3>
+        <p>Juegos Soportados</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="survivors" class="container">
+    <h2 class="section-title">SUPERVIVIENTES (8)</h2>
+    <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en cualquier personaje para ver su biografía y detalles.</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterSurvivors('all')">Todos</button>
+      <button class="filter-btn" onclick="filterSurvivors('l4d1')">Left 4 Dead 1</button>
+      <button class="filter-btn" onclick="filterSurvivors('l4d2')">Left 4 Dead 2</button>
+    </div>
+
+    <div class="cards-grid" id="survivors-grid"></div>
+  </section>
+  <section id="infected" class="container">
+    <h2 class="section-title" style="border-color: #e63946;">INFECTADOS ESPECIALES (8)</h2>
+    <p style="margin-bottom: 15px; color: #c5c6c7;">Haz clic en un infectado para analizar sus habilidades y nivel de amenaza.</p>
+
+    <div class="cards-grid" id="infected-grid"></div>
+  </section>
+
+<section id="campanas" class="container campaigns-section">
+  <div class="campaign-heading"><h2 class="section-title">CAMPAÑAS DE SUPERVIVENCIA</h2></div>
+  <div class="campaign-filters" role="group" aria-label="Filtrar campañas"><button type="button" class="campaign-filter active" data-game="all">TODAS</button><button type="button" class="campaign-filter" data-game="l4d1">LEFT 4 DEAD 1</button><button type="button" class="campaign-filter" data-game="l4d2">LEFT 4 DEAD 2</button></div>
+  <div class="campaign-explorer">
+    <div class="campaign-featured" id="campaign-featured" aria-live="polite">
+      <div class="campaign-scene"><img id="campaign-featured-img" src="assets/campanas/no-mercy.webp" alt="Escenario de No Mercy"><div class="campaign-image-shade"></div><span class="campaign-image-caption" id="campaign-image-caption">ARCHIVO 001 // CEDA</span></div>
+      <div class="campaign-featured-info"><span class="campaign-eyebrow" id="campaign-featured-game">LEFT 4 DEAD 1</span><h3 id="campaign-featured-name">No Mercy</h3><p id="campaign-featured-desc"></p><div class="campaign-setting"><span>ESCENARIO</span><strong id="campaign-featured-setting"></strong></div><div class="campaign-controls"><button id="campaign-prev" type="button" aria-label="Campaña anterior">← ANTERIOR</button><span id="campaign-counter" aria-live="polite"></span><button id="campaign-next" type="button" aria-label="Campaña siguiente">SIGUIENTE →</button></div></div>
+    </div>
+    <div class="campaign-gallery-heading"><h3>GALERÍA DE CAMPAÑAS</h3><span>SELECCIONA UN ARCHIVO PARA EXPLORARLO</span></div>
+    <div class="campaign-gallery" id="campaign-gallery" role="list"></div>
+  </div>
+  
+</section>
+
+
+  <div class="modal-overlay" id="modal-overlay" aria-hidden="true">
+    <div class="modal-content" id="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-btn" type="button" aria-label="Cerrar ficha" onclick="closeModal()">&times;</button>
+      <div class="modal-grid-layout">
+        <aside class="modal-media-panel">
+          <div class="modal-media-frame">
+            <img id="modal-img" src="" alt="">
+            <span class="modal-floating-pill" id="modal-threat-pill"></span>
+          </div>
+          <div class="modal-side-stats">
+            <div class="modal-mini-card">
+              <span class="mini-label">CLASIFICACIÓN</span>
+              <strong id="modal-role"></strong>
+            </div>
+            <div class="modal-mini-card">
+              <span class="mini-label">ORIGEN</span>
+              <strong id="modal-origin"></strong>
+            </div>
+          </div>
+        </aside>
+        <section class="modal-main-panel">
+          <div class="modal-header">
+            <div class="modal-heading-row">
+              <span class="modal-tag" id="modal-tag"></span>
+              <span class="modal-status" id="modal-status"></span>
+            </div>
+            <h2 id="modal-title"></h2>
+            <p class="modal-subtitle" id="modal-subtitle"></p>
+          </div>
+          <div class="modal-body">
+            <div class="modal-summary-card">
+              <span class="modal-section-kicker">EXPEDIENTE</span>
+              <p id="modal-desc"></p>
+            </div>
+            <div class="modal-detail-grid">
+              <div class="modal-detail-card">
+                <span class="detail-label">ROL / HABILIDAD</span>
+                <p id="modal-role-detail"></p>
+              </div>
+              <div class="modal-detail-card">
+                <span class="detail-label">DETALLE CLAVE</span>
+                <p id="modal-extra"></p>
+              </div>
+              <div class="modal-detail-card">
+                <span class="detail-label">ESTADO TÁCTICO</span>
+                <p id="modal-tactical"></p>
+              </div>
+              <div class="modal-detail-card">
+                <span class="detail-label">PERFIL</span>
+                <p id="modal-metric"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer class="ceda-footer">
+    <div class="quotes-ticker">
+      <span class="ticker-label">⚠️ ALERTA DE RADIO:</span>
+      <div class="ticker-content">
+        <span id="game-quote">"¡PILLS HERE!" — Louis</span>
+      </div>
+    </div>
+
+    <div class="footer-body container">
+      <div class="ceda-badge-container">
+        <div class="ceda-stamp">
+          <span class="ceda-title">CEDA</span>
+          <span class="ceda-sub">Civil Emergency and Defense Agency</span>
+        </div>
+        <p class="ceda-warning">
+          SISTEMA DE MONITOREO DE INFECTADOS GENERALES.<br>
+          <em>Desarrollado bajo protocolo de contención CEDA — Nivel de Alerta Naranja.</em>
+        </p>
+      </div>
+
+      <div class="credits-section">
+        <h3>EQUIPO DE DESARROLLO (SUPERVIVIENTES)</h3>
+        <div class="team-links">
+          <a href="https://github.com/poncesangayjorgejesus-design" target="_blank" rel="noopener noreferrer">
+            👨‍💻 Jorge Ponce (Líder / Dev)
+          </a>
+          <a href="https://github.com/cristhianromerozavaleta-desig" target="_blank" rel="noopener noreferrer">
+            👨‍💻 Cristhian Romero (Dev)
+          </a>
+          <a href="https://github.com/estebangonzalezreyna423-jpg" target="_blank" rel="noopener noreferrer">
+            👨‍💻 Esteban Daniel (Dev)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Left 4 Dead Dashboard — Fan Project &bull; Todos los derechos reservados a Valve Corporation.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    function playLocalVideo(id, videoPath) {
+      const container = document.getElementById('media-container-' + id);
+      container.innerHTML = `
+        <video controls autoplay style="width: 100%; height: 350px; object-fit: cover; border-radius: 6px;">
+          <source src="${videoPath}" type="video/mp4">
+          Tu navegador no soporta la reproducción de video.
+        </video>
+      `;
+    }
+  </script>
+
+  <script src="js/main.js"></script>
+  <script src="js/experiencia.js"></script>
+  <script src="js/campanas.js"></script>
+
 </body>
 </html>
